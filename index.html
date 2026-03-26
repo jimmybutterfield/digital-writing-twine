@@ -32,7 +32,22 @@ tw-link:focus, tw-link:hover, tw-link:active, tw-link.visited:hover {
   text-decoration: none;
 }
 tw-passage {
-  padding-bottom: 200px;}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.onload = function () {
+  padding-bottom: 200px;}
+
+
+img {  /* this selects all image (img) elements */
+  width: 100%;
+}
+
+.story-image-smaller {  /* this selects all elements with the story-image-smaller class not just images */
+  width: 50%;
+}
+
+.story-image-smallest {  /* this selects all elements with the story-image-smallest class not just images */
+  width: 25%;
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.onload = function () {
     if (!document.getElementById("bg-music")) {
         var audio = document.createElement("audio");
         audio.id = "bg-music";
@@ -66,7 +81,7 @@ This is yet another line.]</tw-passagedata><tw-passagedata pid="4" name="yellow"
 
 [[&lt;img class=&quot;story-image&quot; src=&quot;./images/tiger.jpg&quot; alt=&quot;an example&quot; /&gt;-&gt;Elephant]]
 
-</tw-passagedata><tw-passagedata pid="5" name="black" tags="" position="475,525" size="100,100">(t8n-delay: 5s) + (t8n: &quot;fade-down&quot;) [your words go here]
+&lt;img class=&quot;story-image-smaller&quot; src=&quot;./images/tiger.jpg&quot; alt=&quot;an example&quot; /&gt;</tw-passagedata><tw-passagedata pid="5" name="black" tags="" position="475,525" size="100,100">(t8n-delay: 5s) + (t8n: &quot;fade-down&quot;) [your words go here]
 
 (t8n-delay: 3s) + (t8n: &quot;flicker&quot;) [different words go here]
 
