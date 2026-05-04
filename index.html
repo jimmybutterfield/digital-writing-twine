@@ -11,14 +11,12 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Sexuality Quiz.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Sexuality Quiz" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="5FE31912-FA0C-4D36-A6D1-8B57FC1E9C47" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
 
-/* Base page setup */
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
 }
 
-/* Global font */
 html,
 body,
 tw-story,
@@ -37,9 +35,14 @@ input,
 select,
 textarea {
   font-family: "Changa One", sans-serif !important;
+  color: black !important;
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
 }
 
-/* Story fills the browser */
 tw-story {
   margin: 0;
   padding: 0;
@@ -49,7 +52,6 @@ tw-story {
   background: transparent;
 }
 
-/* All passages */
 tw-passage {
   box-sizing: border-box;
   margin: 0;
@@ -59,32 +61,39 @@ tw-passage {
   min-height: 100vh;
   position: relative;
   z-index: 1;
-}
-
-/* Tagged passages that use the pride flag background */
-tw-passage[tags~="flag-background"] {
   background: transparent;
 }
 
-/* The actual image layer */
+/* background on every tagged passage */
 tw-passage[tags~="flag-background"]::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-
   background-image: url("images/pride-flag.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
   filter: grayscale(var(--bgGray, 0%));
   transition: filter 0.8s ease;
   pointer-events: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="yellow"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">Sexuality quiz - ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]
+}
+
+/* fallback hover for ordinary links */
+tw-link:hover,
+tw-broken-link:hover,
+.enchantment-link:hover,
+tw-enchantment:hover {
+  color: white !important;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="yellow"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">Sexuality quiz - ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]
 
 click [[HERE]]
-to begin</tw-passagedata><tw-passagedata pid="2" name="HERE" tags="" position="600,425" size="100,100">What&#39;s your favourite colour?
+to begin</tw-passagedata><tw-passagedata pid="2" name="HERE" tags="flag-background" position="600,425" size="100,100">What&#39;s your favourite colour?
 
 (link: &quot;RED&quot;)[
 (set: $roomCount to it + 1)
@@ -104,16 +113,25 @@ to begin</tw-passagedata><tw-passagedata pid="2" name="HERE" tags="" position="6
 (link: &quot;YELLOW&quot;)[
 (set: $roomCount to it + 1)
 (goto: &quot;Favourite artist&quot;)
-]</tw-passagedata><tw-passagedata pid="3" name="Favourite artist" tags="" position="600,550" size="100,100">Who is your favourite [[artist]]?</tw-passagedata><tw-passagedata pid="4" name="artist" tags="" position="400,600" size="100,100">Why are you taking this test? (click-append:&quot;Why are you taking this test?&quot;) [
+]</tw-passagedata><tw-passagedata pid="3" name="Favourite artist" tags="flag-background" position="600,550" size="100,100">Who is your favourite [[artist]]?</tw-passagedata><tw-passagedata pid="4" name="artist" tags="flag-background" position="400,600" size="100,100">Why are you taking this test? (click-append:&quot;Why are you taking this test?&quot;) [
 
 What outcome are you hoping for?] (click-append:&quot;What outcome are you hoping for?&quot;) [
 
 Who are you trying to convince?] 
 
-[[BACK-&gt;Favourite artist]]</tw-passagedata><tw-passagedata pid="5" name="startup" tags="" position="800,375" size="100,100">(set: $roomCount to 0)
+[[BACK-&gt;Favourite artist]]</tw-passagedata><tw-passagedata pid="5" name="Setup" tags="startup" position="800,375" size="100,100">(set: $roomCount to 0)
 (set: $maxFade to 8)
-(set: $bgGray to 0)</tw-passagedata><tw-passagedata pid="6" name="Untitled Passage" tags="header" position="925,375" size="100,100">(set: $bgGray to (min: 95, ($roomCount / $maxFade) * 95))
-(enchant: ?Page, (css: &quot;--bgGray:&quot; + (str: $bgGray) + &quot;%;&quot;))</tw-passagedata></tw-storydata>
+(set: $bgGray to 0)</tw-passagedata><tw-passagedata pid="6" name="Background Control" tags="header" position="925,375" size="100,100">(if: $maxFade &lt;= 0)[
+	(set: $maxFade to 8)
+]
+(if: $roomCount &lt; 0)[
+	(set: $roomCount to 0)
+]
+
+(set: $bgGray to (min: 95, ($roomCount / $maxFade) * 95))
+(enchant: ?Page, (css: &quot;--bgGray:&quot; + (str: $bgGray) + &quot;%;&quot;))
+(enchant: ?Link, (css: &quot;color:black !important; text-shadow:-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;&quot;))
+(enchant: ?Link, (hover-style:(css: &quot;color:white !important; text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;&quot;)))</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
