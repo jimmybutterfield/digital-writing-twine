@@ -11,18 +11,17 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Sexuality Quiz.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Sexuality Quiz" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="5FE31912-FA0C-4D36-A6D1-8B57FC1E9C47" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
 
-tw-story {
-  font-family: "Changa One", sans-serif;
+tw-story[tags~="flag-background"] {
+  background: transparent;
 }
 
-
-background-image: url("images/pride-flag.jpg");
-
-tw-story[tags~="flag-background"] {
+tw-passage[tags~="flag-background"] {
   background-image: url("images/pride-flag.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Changa One", sans-serif;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="yellow"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">Sexuality quiz - ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]
 
 click [[HERE]]
