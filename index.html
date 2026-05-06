@@ -206,22 +206,22 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 |answerrow&gt;[
 (link: &quot;&lt;img class=&#39;quiz-icon&#39; src=&#39;images/cat.png&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Artist&quot;)
+	(goto: &quot;Fruit&quot;)
 ]
 
 (link: &quot;&lt;img class=&#39;quiz-icon&#39; src=&#39;images/dog.png&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Artist&quot;)
+	(goto: &quot;Fruit&quot;)
 ]
 
 (link: &quot;&lt;img class=&#39;quiz-icon&#39; src=&#39;images/fish.png&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Artist&quot;)
+	(goto: &quot;Fruit&quot;)
 ]
 
 (link: &quot;&lt;img class=&#39;quiz-icon&#39; src=&#39;images/lion.png&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Artist&quot;)
+	(goto: &quot;Fruit&quot;)
 ]]
 </tw-passagedata><tw-passagedata pid="4" name="Setup" tags="startup" position="775,300" size="100,100">(set: $roomCount to 0)
 (set: $maxFade to 8)
@@ -235,7 +235,7 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 (set: $bgGray to (min: 95, ($roomCount / $maxFade) * 95))
 (enchant: ?Page, (css: &quot;--bgGray:&quot; + (str: $bgGray) + &quot;%;&quot;))
 (enchant: ?Link, (css: &quot;color:black !important; text-shadow:-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;&quot;))
-(enchant: ?Link, (hover-style:(css: &quot;color:white !important; text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;&quot;)))</tw-passagedata><tw-passagedata pid="6" name="Artist" tags="flag-background" position="650,475" size="100,100">|title&gt;[What&#39;s your favourite Kylie Minogue album?]
+(enchant: ?Link, (hover-style:(css: &quot;color:white !important; text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;&quot;)))</tw-passagedata><tw-passagedata pid="6" name="Artist" tags="flag-background" position="775,475" size="100,100">|title&gt;[What&#39;s your favourite Kylie Minogue album?]
 
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/fever.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Fever&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -261,7 +261,7 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 (link: &quot;skip&quot;)[
 (set: $roomCount to it + 1)
 (goto: &quot;LIAR&quot;)
-]</tw-passagedata><tw-passagedata pid="7" name="Friday night" tags="flag-background" position="775,475" size="100,100">|title&gt;[What&#39;s your ideal friday night?]
+]</tw-passagedata><tw-passagedata pid="7" name="Friday night" tags="flag-background" position="900,475" size="100,100">|title&gt;[What&#39;s your ideal friday night?]
 
 |answerrow&gt;[
 (link: &quot;Drinks with the boys&quot;)[
@@ -302,12 +302,12 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/gay-camping.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Gay camping&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Fruit&quot;)
+	(goto: &quot;Next&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/gay-wine.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Gay wines&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Fruit&quot;)
+	(goto: &quot;Next&quot;)
 ]]</tw-passagedata><tw-passagedata pid="10" name="Truth" tags="flag-background" position="225,450" size="100,100">|title&gt;[Was that the truth?]
 
 |answerrow&gt;[
@@ -318,7 +318,28 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 (link: &quot;no&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Dream Date&quot;)
-]]</tw-passagedata><tw-passagedata pid="11" name="Fruit" tags="" position="600,625" size="100,100"></tw-passagedata></tw-storydata>
+]]</tw-passagedata><tw-passagedata pid="11" name="Fruit" tags="" position="650,475" size="100,100">|title&gt;[What&#39;s your favourite fruit?]
+
+|answerrow&gt;[
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/banana.jpeg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Banana&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Artist&quot;)
+]
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/strawberry.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Strawberry&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Artist&quot;)
+]
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/grapes.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Grapes&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Artist&quot;)
+]
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/mango.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Mango&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Artist&quot;)
+]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
