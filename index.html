@@ -151,10 +151,30 @@ tw-hook[name="answerrow"] {
   gap: 24px;
   flex-wrap: wrap;
   text-align: center;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[Sexuality quiz - ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
+}
+
+img.start-button {
+  width: 260px;
+  height: auto;
+  display: block;
+  background: transparent !important;
+}
+
+tw-hook[name="answerrow"] tw-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+tw-hook[name="answerrow"] tw-link:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
-(link: &quot;&lt;img class=&#39;quiz-icon&#39; src=&#39;images/quiz-button.png&#39;&gt;&quot;)[
+(link: &quot;&lt;img class=&#39;start-button&#39; src=&#39;images/quiz-button.png&#39; alt=&#39;Take the quiz&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Colour&quot;)
 ]]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="400,425" size="100,100">|title&gt;[What&#39;s your favourite colour?]
