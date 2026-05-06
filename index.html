@@ -115,12 +115,16 @@ to begin</tw-passagedata><tw-passagedata pid="2" name="HERE" tags="flag-backgrou
 (goto: &quot;Animal&quot;)
 ]</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="525,450" size="100,100">What animal are you?
 
-(link: &quot;Cat&quot;)[
+(link: &quot;&lt;img src=&#39;images/cat.png&#39; width=&#39;300&#39;&gt;&quot;)
 (set: $roomCount to it + 1)
 (goto: &quot;Song Lyric&quot;)
-]
-
-(link: &quot;Dog&quot;)[
+] (link: &quot;&lt;img src=&#39;images/dog.png&#39; width=&#39;300&#39;&gt;&quot;)
+(set: $roomCount to it + 1)
+(goto: &quot;Song Lyric&quot;)
+] (link: &quot;&lt;img src=&#39;images/fish.png&#39; width=&#39;300&#39;&gt;&quot;)
+(set: $roomCount to it + 1)
+(goto: &quot;Song Lyric&quot;)
+] (link: &quot;&lt;img src=&#39;images/lion.png&#39; width=&#39;300&#39;&gt;&quot;)
 (set: $roomCount to it + 1)
 (goto: &quot;Song Lyric&quot;)
 ]
@@ -154,7 +158,7 @@ to begin</tw-passagedata><tw-passagedata pid="2" name="HERE" tags="flag-backgrou
 (link: &quot;Lyrics here&quot;)[
 (set: $roomCount to it + 1)
 (goto: &quot;Friday night&quot;)
-]</tw-passagedata><tw-passagedata pid="7" name="Friday night" tags="flag-background" position="800,475" size="100,100">What&#39;s your ideal Friday night?
+]</tw-passagedata><tw-passagedata pid="7" name="Friday night" tags="flag-background" position="775,475" size="100,100">What&#39;s your ideal Friday night?
 
 (link: &quot;Drinks with the boys&quot;)[
 (set: $roomCount to it + 1)
