@@ -157,7 +157,10 @@ img.start-button {
   width: 420px;
   height: auto;
   display: block;
-  background: transparent !important;
+  border: 4px solid black;
+  box-sizing: border-box;
+  filter: grayscale(0%);
+  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 tw-hook[name="answerrow"] tw-link {
@@ -167,10 +170,9 @@ tw-hook[name="answerrow"] tw-link {
   padding: 0 !important;
 }
 
-tw-hook[name="answerrow"] tw-link:hover {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+tw-hook[name="answerrow"] tw-link:hover img.start-button {
+  filter: grayscale(100%);
+  border-color: limegreen;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
