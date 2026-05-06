@@ -313,15 +313,15 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 |answerrow&gt;[
 (link: &quot;yes&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Fruit&quot;)
+	(goto: &quot;Next&quot;)
 ]
 (link: &quot;no&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Dream Date&quot;)
-]]</tw-passagedata><tw-passagedata pid="11" name="Fruit" tags="" position="650,475" size="100,100">|title&gt;[What&#39;s your favourite fruit?]
+]]</tw-passagedata><tw-passagedata pid="11" name="Fruit" tags="flag-background" position="650,475" size="100,100">|title&gt;[What&#39;s your favourite fruit?]
 
 |answerrow&gt;[
-(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/banana.jpeg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Banana&lt;/div&gt;&lt;/div&gt;&quot;)[
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/banana.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Banana&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Artist&quot;)
 ]
