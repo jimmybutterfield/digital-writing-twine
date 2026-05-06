@@ -156,7 +156,7 @@ tw-hook[name="answerrow"] {
 [[BEGIN]]
 </tw-passagedata><tw-passagedata pid="2" name="BEGIN" tags="flag-background" position="400,425" size="100,100">|title&gt;[What&#39;s your favourite colour?]
 
-
+|answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
@@ -175,7 +175,7 @@ tw-hook[name="answerrow"] {
 (link: &quot;&lt;span style=&#39;color:#d4a000;&#39;&gt;YELLOW&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
-]
+]]
 </tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="525,450" size="100,100">|title&gt;[What animal are you?]
 
 |answerrow&gt;[
@@ -212,7 +212,7 @@ tw-hook[name="answerrow"] {
 (enchant: ?Link, (css: &quot;color:black !important; text-shadow:-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;&quot;))
 (enchant: ?Link, (hover-style:(css: &quot;color:white !important; text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;&quot;)))</tw-passagedata><tw-passagedata pid="6" name="Artist" tags="flag-background" position="650,475" size="100,100">|title&gt;[What&#39;s your favourite Kylie Minogue album?]
 
-|iconrow&gt;[
+|answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/fever.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Fever&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Friday night&quot;)
@@ -231,8 +231,7 @@ tw-hook[name="answerrow"] {
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/christmas.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Kylie Christmas&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Friday night&quot;)
-]
-]
+]]
 
 (link: &quot;skip&quot;)[
 (set: $roomCount to it + 1)
