@@ -240,7 +240,18 @@ tw-passage[tags~="claim-background"] tw-hook[name="title"] {
   line-height: 1.1;
   text-align: left;
   letter-spacing: 1px;
-  margin: 0 0 0.75rem 0 !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formbox"] {
+  display: block;
+  width: 380px;
+  max-width: 85vw;
+  background: white;
+  border: 4px solid black;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
@@ -257,24 +268,39 @@ tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
 
 tw-passage[tags~="claim-background"] .fake-label {
   display: block;
-  width: 320px;
-  max-width: 80vw;
+  width: 100%;
   text-align: left;
   margin: 0.2rem 0 0 0;
+  color: black !important;
+  text-shadow: none !important;
 }
 
 tw-passage[tags~="claim-background"] .fake-input {
   display: block;
-  width: 320px;
-  max-width: 80vw;
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
   font-family: "Changa One", sans-serif;
   border: 3px solid black;
   background: white;
   color: black;
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.5rem 0;
   box-sizing: border-box;
+  text-shadow: none !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formbox"] tw-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: yellow !important;
+  border: 3px solid black !important;
+  padding: 0.5rem 1rem !important;
+  text-decoration: none;
+  box-shadow: none !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formbox"] tw-link:hover {
+  background: limegreen !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
@@ -462,6 +488,7 @@ tw-passage[tags~="claim-background"] .fake-input {
 	(stop:)
 ]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="1150,300" size="100,100">|title&gt;[Claim your one-time-only special sexuality quiz offer]
 
+|formbox&gt;[
 |formroom&gt;[
 &lt;span class=&quot;fake-label&quot;&gt;Email&lt;/span&gt;
 &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter email here&quot;&gt;
@@ -477,6 +504,7 @@ tw-passage[tags~="claim-background"] .fake-input {
 
 (link: &quot;SUBMIT&quot;)[
 	(goto: &quot;Next Passage&quot;)
+]
 ]
 ]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
