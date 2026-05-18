@@ -176,7 +176,6 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 }
 
 
-
 tw-passage[tags~="offer-background"] {
   background: hotpink !important;
   margin: 0 !important;
@@ -187,8 +186,7 @@ tw-passage[tags~="offer-background"] {
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
+  align-items: center;
 }
 
 tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
@@ -211,12 +209,13 @@ tw-passage[tags~="offer-background"] tw-link {
 
 img.offer-poster {
   display: block;
+  max-width: 68vw;
+  max-height: 82vh;
   width: auto;
-  height: 100vh;
-  max-width: 100vw;
-  object-fit: contain;
+  height: auto;
   border: 4px solid black;
   box-sizing: border-box;
+  margin: 0 auto;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
@@ -225,23 +224,39 @@ tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
   transform: scale(1.02);
 }
 
-
-/* Claim room: keep simpler, close to your older version */
 tw-passage[tags~="claim-background"] {
   background: hotpink !important;
   margin: 0 !important;
-  padding: 2rem !important;
+  padding: 1rem 2rem 2rem 2rem !important;
   min-height: 100vh !important;
   width: 100% !important;
   max-width: 100% !important;
 }
 
-tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+tw-passage[tags~="claim-background"] tw-hook[name="title"] {
+  display: block;
   text-align: center;
+  margin: 0 0 0.75rem 0 !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.35rem !important;
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+tw-passage[tags~="claim-background"] .fake-label {
+  display: block;
+  width: 320px;
+  max-width: 80vw;
+  text-align: center;
+  margin: 0.2rem auto 0 auto;
 }
 
 tw-passage[tags~="claim-background"] .fake-input {
@@ -254,7 +269,7 @@ tw-passage[tags~="claim-background"] .fake-input {
   border: 3px solid black;
   background: white;
   color: black;
-  margin-bottom: 12px;
+  margin: 0 auto 0.4rem auto;
   box-sizing: border-box;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
