@@ -177,40 +177,29 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 
 
 
-tw-story[tags~="offer-background"] {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  min-height: 100vh !important;
-  background: hotpink !important;
-}
-
 tw-passage[tags~="offer-background"] {
+  background: hotpink !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
   min-height: 100vh !important;
-  background: hotpink !important;
-  position: fixed;
-  inset: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
 tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100vw;
-  height: 100vh;
+  display: block;
   margin: 0;
   padding: 0;
-  text-align: center;
+  line-height: 0;
 }
 
 tw-passage[tags~="offer-background"] tw-link {
-  display: inline-block;
+  display: block;
   margin: 0 !important;
   padding: 0 !important;
   background: transparent !important;
@@ -228,7 +217,6 @@ img.offer-poster {
   object-fit: contain;
   border: 4px solid black;
   box-sizing: border-box;
-  filter: grayscale(0%);
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
@@ -238,50 +226,22 @@ tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
 }
 
 
-
-
-tw-story[tags~="claim-background"] {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  min-height: 100vh !important;
-  background: hotpink !important;
-}
-
+/* Claim room: keep simpler, close to your older version */
 tw-passage[tags~="claim-background"] {
-  margin: 0 !important;
-  padding: 1.5rem 0 0 0 !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  min-height: 100vh !important;
   background: hotpink !important;
-}
-
-tw-passage[tags~="claim-background"] tw-hook[name="title"] {
-  display: block;
-  text-align: center;
-  margin: 0 0 1.5rem 0 !important;
+  margin: 0 !important;
+  padding: 2rem !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 0.75rem;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   text-align: center;
-}
-
-tw-passage[tags~="claim-background"] .fake-label {
-  display: block;
-  width: 320px;
-  max-width: 80vw;
-  text-align: left;
-  margin: 0 auto 0.2rem auto;
 }
 
 tw-passage[tags~="claim-background"] .fake-input {
@@ -294,8 +254,8 @@ tw-passage[tags~="claim-background"] .fake-input {
   border: 3px solid black;
   background: white;
   color: black;
+  margin-bottom: 12px;
   box-sizing: border-box;
-  margin: 0 auto 0.8rem auto;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
