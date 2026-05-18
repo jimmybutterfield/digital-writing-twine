@@ -175,23 +175,52 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
   border-color: limegreen;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+tw-passage[tags~="offer-background"] {
+  background: hotpink;
+}
+
 tw-hook[name="posterroom"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
   text-align: center;
 }
 
-img.big-poster {
+tw-hook[name="posterroom"] tw-link {
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  line-height: 0;
+  cursor: pointer;
+}
+
+img.offer-poster {
   display: block;
-  max-width: 90vw;
-  max-height: 92vh;
+  max-width: 70vw;
+  max-height: 88vh;
   width: auto;
   height: auto;
-  margin: 0 auto;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
+  border: 4px solid black;
+  box-sizing: border-box;
+  filter: grayscale(0%);
+  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+tw-hook[name="posterroom"] tw-link:hover img.offer-poster {
+  filter: grayscale(100%);
+  border-color: limegreen;
+  transform: scale(1.02);
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
 (link: &quot;&lt;img class=&#39;start-button&#39; src=&#39;images/quiz-button.png&#39; alt=&#39;Take the quiz&#39;&gt;&quot;)[
@@ -242,7 +271,7 @@ img.big-poster {
 	(goto: &quot;Fruit&quot;)
 ]]
 </tw-passagedata><tw-passagedata pid="4" name="Setup" tags="startup" position="775,300" size="100,100">(set: $roomCount to 0)
-(set: $maxFade to 8)
+(set: $maxFade to 16)
 (set: $bgGray to 0)</tw-passagedata><tw-passagedata pid="5" name="Background Control" tags="header" position="925,300" size="100,100">(if: $maxFade &lt;= 0)[
 	(set: $maxFade to 8)
 ]
@@ -357,15 +386,17 @@ img.big-poster {
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/mango.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Mango&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Artist&quot;)
-]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="" position="1050,475" size="100,100">|posterroom&gt;[
-&lt;img class=&quot;big-poster&quot; src=&quot;images/Brokeback.png&quot; alt=&quot;Brokeback poster&quot;&gt;
+]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="offer-background" position="1050,475" size="100,100">|posterroom&gt;[
+(link: &quot;&lt;img class=&#39;offer-poster&#39; src=&#39;images/Brokeback.png&#39; alt=&#39;Brokeback offer poster&#39;&gt;&quot;)[
+	(goto: &quot;Claim Offer&quot;)
+]
 ]
 
 &lt;audio autoplay&gt;
   &lt;source src=&quot;audio/horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
-|fireaudio)[
+|fireaudio&gt;[
 &lt;audio autoplay loop&gt;
   &lt;source src=&quot;audio/fire.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
@@ -374,6 +405,25 @@ img.big-poster {
 (live: 3s)[
 	(show: ?fireaudio)
 	(stop:)
+]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="flag-background" position="1150,300" size="100,100">|title&gt;[Claim your one-time-only special sexuality quiz offer]
+
+|formroom&gt;[
+Email  
+&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter email here&quot;&gt;
+
+Date of birth  
+&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;DD/MM/YYYY&quot;&gt;
+
+Location  
+&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter location here&quot;&gt;
+
+Card details  
+&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter card details here&quot;&gt;
+
+(link: &quot;SUBMIT&quot;)[ 
+	(set: $roomCount to it + 1)
+	(goto: &quot;Next Passage&quot;)
+]
 ]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
