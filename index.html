@@ -183,23 +183,31 @@ html, body {
 
 tw-passage[tags~="offer-background"] {
   background: hotpink;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-tw-hook[name="posterroom"] {
+tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-tw-hook[name="posterroom"] tw-link {
+tw-passage[tags~="offer-background"] tw-link {
   display: inline-block;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
+  margin: 0 !important;
   line-height: 0;
   cursor: pointer;
 }
@@ -216,7 +224,7 @@ img.offer-poster {
   transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-tw-hook[name="posterroom"] tw-link:hover img.offer-poster {
+tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
   border-color: limegreen;
   transform: scale(1.02);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
