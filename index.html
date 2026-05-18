@@ -143,14 +143,6 @@ tw-hook[name="title"] {
   letter-spacing: 1px;
 }
 
-tw-hook[name="titleoffer"] {
-  display: block;
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: 1rem;
-  text-align: top;
-  letter-spacing: 1px;
-}
 
 tw-hook[name="answerrow"] {
   display: flex;
@@ -244,14 +236,17 @@ tw-passage[tags~="claim-background"] {
 
 tw-passage[tags~="claim-background"] tw-hook[name="title"] {
   display: block;
+  font-size: 2rem;
+  line-height: 1.1;
   text-align: left;
+  letter-spacing: 1px;
   margin: 0 0 0.75rem 0 !important;
 }
 
 tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
   display: flex !important;
   flex-direction: column !important;
-  align-items: left !important;
+  align-items: flex-start !important;
   justify-content: flex-start !important;
   gap: 0.35rem !important;
   text-align: left;
@@ -265,7 +260,7 @@ tw-passage[tags~="claim-background"] .fake-label {
   width: 320px;
   max-width: 80vw;
   text-align: left;
-  margin: 0.2rem auto 0 auto;
+  margin: 0.2rem 0 0 0;
 }
 
 tw-passage[tags~="claim-background"] .fake-input {
@@ -278,7 +273,7 @@ tw-passage[tags~="claim-background"] .fake-input {
   border: 3px solid black;
   background: white;
   color: black;
-  margin: 0 auto 0.4rem auto;
+  margin: 0 0 0.4rem 0;
   box-sizing: border-box;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
@@ -465,7 +460,7 @@ tw-passage[tags~="claim-background"] .fake-input {
 (live: 3s)[
 	(show: ?fireaudio)
 	(stop:)
-]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="1150,300" size="100,100">|titleoffer&gt;[Claim your one-time-only special sexuality quiz offer]
+]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="1150,300" size="100,100">|title&gt;[Claim your one-time-only special sexuality quiz offer]
 
 |formroom&gt;[
 &lt;span class=&quot;fake-label&quot;&gt;Email&lt;/span&gt;
