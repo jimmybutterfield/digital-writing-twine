@@ -243,13 +243,17 @@ tw-passage[tags~="claim-background"] {
   box-sizing: border-box !important;
 }
 
+tw-passage[tags~="claim-background"] p {
+  margin: 0 !important;
+}
+
 tw-passage[tags~="claim-background"] tw-hook[name="title"] {
   display: block !important;
   font-size: 2rem !important;
   line-height: 1.05 !important;
   text-align: left !important;
   letter-spacing: 1px !important;
-  margin: 0 !important;
+  margin: 0 0 0.25rem 0 !important;
   padding: 0 !important;
 }
 
@@ -259,9 +263,52 @@ tw-passage[tags~="claim-background"] tw-hook[name="formbox"] {
   max-width: 85vw !important;
   background: white !important;
   border: 4px solid black !important;
-  padding: 0.35rem !important;
+  padding: 0.25rem !important;
   box-sizing: border-box !important;
-  margin: 0.2rem 0 0 0 !important;
+  margin: 0 !important;
+}
+
+tw-passage[tags~="claim-background"] .claim-field {
+  display: block !important;
+  margin: 0 0 0.2rem 0 !important;
+  padding: 0 !important;
+}
+
+tw-passage[tags~="claim-background"] .fake-label {
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+  margin: 0 0 0.03rem 0 !important;
+  color: black !important;
+  text-shadow: none !important;
+}
+
+tw-passage[tags~="claim-background"] .fake-input {
+  display: block !important;
+  width: 100% !important;
+  padding: 8px !important;
+  font-size: 1rem !important;
+  font-family: "Changa One", sans-serif !important;
+  border: 3px solid black !important;
+  background: white !important;
+  color: black !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  text-shadow: none !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formbox"] tw-link {
+  display: inline-block !important;
+  margin-top: 0.15rem !important;
+  background: yellow !important;
+  border: 3px solid black !important;
+  padding: 0.45rem 0.9rem !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formbox"] tw-link:hover {
+  background: limegreen !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
@@ -448,15 +495,30 @@ tw-passage[tags~="claim-background"] tw-hook[name="formbox"] {
 	(show: ?fireaudio)
 	(stop:)
 ]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="1150,300" size="100,100">|title&gt;[Claim your one-time-only special sexuality quiz offer]
+
 |formbox&gt;[
-|formroom&gt;[
-&lt;span class=&quot;fake-label&quot;&gt;Email&lt;/span&gt;&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter email here&quot;&gt;
-&lt;span class=&quot;fake-label&quot;&gt;Date of birth&lt;/span&gt;&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;DD/MM/YYYY&quot;&gt;
-&lt;span class=&quot;fake-label&quot;&gt;Location&lt;/span&gt;&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter location here&quot;&gt;
-&lt;span class=&quot;fake-label&quot;&gt;Card details&lt;/span&gt;&lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter card details here&quot;&gt;
+&lt;div class=&quot;claim-field&quot;&gt;
+  &lt;div class=&quot;fake-label&quot;&gt;Email&lt;/div&gt;
+  &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter email here&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;claim-field&quot;&gt;
+  &lt;div class=&quot;fake-label&quot;&gt;Date of birth&lt;/div&gt;
+  &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;DD/MM/YYYY&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;claim-field&quot;&gt;
+  &lt;div class=&quot;fake-label&quot;&gt;Location&lt;/div&gt;
+  &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter location here&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;claim-field&quot;&gt;
+  &lt;div class=&quot;fake-label&quot;&gt;Card details&lt;/div&gt;
+  &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter card details here&quot;&gt;
+&lt;/div&gt;
+
 (link: &quot;SUBMIT&quot;)[
 	(goto: &quot;Next Passage&quot;)
-]
 ]
 ]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
