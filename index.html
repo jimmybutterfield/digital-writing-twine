@@ -226,51 +226,47 @@ tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
 }
 
 
-tw-story[tags~="claim-background"] {
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 100vh !important;
-  background: hotpink !important;
-}
-
 tw-passage[tags~="claim-background"] {
   background: hotpink !important;
   margin: 0 !important;
-  padding: 0.1rem 2rem 2rem 2rem !important;
+  padding: 0 !important;
   min-height: 100vh !important;
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
-}
-
-tw-passage[tags~="claim-background"] p {
-  margin: 0 !important;
+  position: relative !important;
 }
 
 tw-passage[tags~="claim-background"] tw-hook[name="title"] {
   display: block !important;
+  position: absolute !important;
+  top: 12px !important;
+  left: 32px !important;
   font-size: 2rem !important;
   line-height: 1.05 !important;
   text-align: left !important;
   letter-spacing: 1px !important;
-  margin: 0 0 0.25rem 0 !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
 tw-passage[tags~="claim-background"] tw-hook[name="formbox"] {
   display: block !important;
+  position: absolute !important;
+  top: 84px !important;
+  left: 32px !important;
   width: 380px !important;
   max-width: 85vw !important;
   background: white !important;
   border: 4px solid black !important;
-  padding: 0.25rem !important;
+  padding: 0.2rem !important;
   box-sizing: border-box !important;
   margin: 0 !important;
 }
 
 tw-passage[tags~="claim-background"] .claim-field {
   display: block !important;
-  margin: 0 0 0.2rem 0 !important;
+  margin: 0 0 0.15rem 0 !important;
   padding: 0 !important;
 }
 
@@ -278,7 +274,7 @@ tw-passage[tags~="claim-background"] .fake-label {
   display: block !important;
   width: 100% !important;
   text-align: left !important;
-  margin: 0 0 0.03rem 0 !important;
+  margin: 0 0 0.02rem 0 !important;
   color: black !important;
   text-shadow: none !important;
 }
@@ -299,7 +295,7 @@ tw-passage[tags~="claim-background"] .fake-input {
 
 tw-passage[tags~="claim-background"] tw-hook[name="formbox"] tw-link {
   display: inline-block !important;
-  margin-top: 0.15rem !important;
+  margin-top: 0.1rem !important;
   background: yellow !important;
   border: 3px solid black !important;
   padding: 0.45rem 0.9rem !important;
@@ -513,7 +509,6 @@ tw-passage[tags~="claim-background"] tw-hook[name="formbox"] tw-link:hover {
   &lt;div class=&quot;fake-label&quot;&gt;Card details&lt;/div&gt;
   &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter card details here&quot;&gt;
 &lt;/div&gt;
-
 (link: &quot;SUBMIT&quot;)[
 	(goto: &quot;Next Passage&quot;)
 ]
