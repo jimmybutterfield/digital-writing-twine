@@ -176,21 +176,34 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
 }
 
 
-tw-passage[tags~="offer-background"] {
-  background: hotpink;
+
+tw-story[tags~="offer-background"] {
   margin: 0 !important;
   padding: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
   min-height: 100vh !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  background: hotpink !important;
+}
+
+tw-passage[tags~="offer-background"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  background: hotpink !important;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
 }
 
 tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -198,25 +211,25 @@ tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
 
 tw-passage[tags~="offer-background"] tw-link {
   display: inline-block;
+  margin: 0 !important;
+  padding: 0 !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
   line-height: 0;
   cursor: pointer;
 }
 
 img.offer-poster {
   display: block;
-  max-width: 78vw;
-  max-height: 100vh;
   width: auto;
-  height: auto;
+  height: 100vh;
+  max-width: 100vw;
+  object-fit: contain;
   border: 4px solid black;
   box-sizing: border-box;
   filter: grayscale(0%);
-  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
@@ -224,31 +237,66 @@ tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
   transform: scale(1.02);
 }
 
-tw-passage[tags~="claim-background"] {
-  background: hotpink;
+
+
+
+tw-story[tags~="claim-background"] {
   margin: 0 !important;
-  padding: 1rem 0 0 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
   min-height: 100vh !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  background: hotpink !important;
 }
 
-tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  gap: 12px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+tw-passage[tags~="claim-background"] {
+  margin: 0 !important;
+  padding: 1.5rem 0 0 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  background: hotpink !important;
 }
 
 tw-passage[tags~="claim-background"] tw-hook[name="title"] {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
+  display: block;
+  text-align: center;
+  margin: 0 0 1.5rem 0 !important;
+}
+
+tw-passage[tags~="claim-background"] tw-hook[name="formroom"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+tw-passage[tags~="claim-background"] .fake-label {
+  display: block;
+  width: 320px;
+  max-width: 80vw;
+  text-align: left;
+  margin: 0 auto 0.2rem auto;
+}
+
+tw-passage[tags~="claim-background"] .fake-input {
+  display: block;
+  width: 320px;
+  max-width: 80vw;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: "Changa One", sans-serif;
+  border: 3px solid black;
+  background: white;
+  color: black;
+  box-sizing: border-box;
+  margin: 0 auto 0.8rem auto;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
 (link: &quot;&lt;img class=&#39;start-button&#39; src=&#39;images/quiz-button.png&#39; alt=&#39;Take the quiz&#39;&gt;&quot;)[
@@ -433,23 +481,22 @@ tw-passage[tags~="claim-background"] tw-hook[name="title"] {
 (live: 3s)[
 	(show: ?fireaudio)
 	(stop:)
-]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="offer-background" position="1150,300" size="100,100">|title&gt;[Claim your one-time-only special sexuality quiz offer]
+]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="1150,300" size="100,100">|title&gt;[Claim your one-time-only special sexuality quiz offer]
 
 |formroom&gt;[
-Email  
+&lt;span class=&quot;fake-label&quot;&gt;Email&lt;/span&gt;
 &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter email here&quot;&gt;
 
-Date of birth  
+&lt;span class=&quot;fake-label&quot;&gt;Date of birth&lt;/span&gt;
 &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;DD/MM/YYYY&quot;&gt;
 
-Location  
+&lt;span class=&quot;fake-label&quot;&gt;Location&lt;/span&gt;
 &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter location here&quot;&gt;
 
-Card details  
+&lt;span class=&quot;fake-label&quot;&gt;Card details&lt;/span&gt;
 &lt;input class=&quot;fake-input&quot; type=&quot;text&quot; placeholder=&quot;Enter card details here&quot;&gt;
 
-(link: &quot;SUBMIT&quot;)[ 
-	(set: $roomCount to it + 1)
+(link: &quot;SUBMIT&quot;)[
 	(goto: &quot;Next Passage&quot;)
 ]
 ]</tw-passagedata></tw-storydata>
