@@ -631,7 +631,7 @@ ARE YOU GAY?
 |skipbutton&gt;[
 (link: &quot;&lt;div class=&#39;skip-choice&#39;&gt;&lt;img class=&#39;skip-icon&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;skip-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Closeted trip&quot;)
+	(goto: &quot;Oh&quot;)
 ]
 ]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="825,225" size="100,100">&lt;div style=&quot;position:absolute; top:22px; left:32px; right:32px; text-align:left;&quot;&gt;
   &lt;div style=&quot;font-size:2rem; line-height:1.05; letter-spacing:1px; margin:0 0 10px 0;&quot;&gt;
@@ -675,17 +675,26 @@ ARE YOU GAY?
 (link: &quot;On the couch&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
-]]</tw-passagedata><tw-passagedata pid="16" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|title&gt;[MAYBE YOU&#39;D PREFER THIS]
-
-|posterroom&gt;[
+]]</tw-passagedata><tw-passagedata pid="16" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|posterroom&gt;[
 (link: &quot;&lt;img class=&#39;offer-poster&#39; src=&#39;images/closeted.png&#39; alt=&#39;Brokeback offer poster&#39;&gt;&quot;)[
 	(goto: &quot;Claim Offer&quot;)
 ]
 ]
 
 &lt;audio autoplay&gt;
+  &lt;source src=&quot;audio/horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+|fireaudio&gt;[
+&lt;audio autoplay loop&gt;
   &lt;source src=&quot;audio/fire.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
+]
+
+(live: 3s)[
+	(show: ?fireaudio)
+	(stop:)
+]
 
 
 |skipbutton&gt;[
@@ -786,7 +795,13 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   ]
 &lt;/div&gt;
 
-&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Oh" tags="" position="75,600" size="100,100">Oh...
+(t8n-delay: 2s) + (t8n: &quot;fade-down&quot;) [Maybe you&#39;d prefer](t8n-delay: 3s) + (t8n: &quot;fade-down&quot;) [(link: &quot;this&quot;)[
+(set: $roomCount to it + 1)
+(goto: &quot;Closeted trip&quot;)
+]]
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
