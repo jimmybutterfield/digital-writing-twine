@@ -45,8 +45,9 @@ textarea {
 }
 
 tw-story {
-  margin: 0;
-  padding: 0;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
   width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
@@ -54,9 +55,10 @@ tw-story {
 }
 
 tw-passage {
+  display: block !important;
   box-sizing: border-box;
-  margin: 0;
-  padding: 3.5rem 2rem 2rem 2rem;
+  margin: 0 !important;
+  padding: 4.2rem 2rem 2rem 2rem !important;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -94,12 +96,21 @@ tw-enchantment:hover {
      1px  1px 0 black;
 }
 
+/* header hook should not push content down */
+tw-hook[name="topnav"] {
+  display: block !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* global title hook */
 tw-hook[name="title"] {
   display: block;
   font-size: 2rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.1;
+  margin: 0 0 0.8rem 0 !important;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -143,21 +154,21 @@ tw-hook[name="title"] {
 tw-hook[name="hero"] {
   display: block;
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .hero-title {
   font-size: 4.4rem;
   line-height: 1;
   letter-spacing: 1px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 tw-hook[name="answerrow"] {
@@ -168,7 +179,7 @@ tw-hook[name="answerrow"] {
   gap: 24px;
   flex-wrap: wrap;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0.8rem 0 1rem 0 !important;
 }
 
 tw-hook[name="answerrow"] tw-link {
@@ -202,7 +213,7 @@ tw-hook[name="badgerow"] {
   align-items: center;
   gap: 0.7rem;
   flex-wrap: wrap;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .fake-badge {
@@ -215,9 +226,9 @@ tw-hook[name="badgerow"] {
 
 tw-hook[name="reviewbox"] {
   display: block;
-  width: 320px;
+  width: 300px;
   max-width: 85vw;
-  margin: 1rem auto 1rem auto;
+  margin: 0.8rem auto 0.8rem auto;
   padding: 0.7rem;
   background: rgba(255,255,255,0.82);
   border: 4px solid black;
@@ -249,8 +260,8 @@ tw-hook[name="reviewbox"] {
 tw-hook[name="disclaimer"] {
   display: block;
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .fake-disclaimer {
@@ -305,7 +316,7 @@ img.album-cover {
 tw-passage[tags~="offer-background"] {
   background: hotpink !important;
   margin: 0 !important;
-  padding: 3.5rem 0 0 0 !important;
+  padding: 4.2rem 0 0 0 !important;
   min-height: 100vh !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -394,9 +405,9 @@ tw-passage[tags~="claim-background"] {
   min-height: 100vh !important;
   position: relative !important;
   overflow-y: auto !important;
-  padding-top: 3.5rem !important;
+  padding-top: 4.2rem !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
-&lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY?(click-replace: &quot;GAY&quot;) [LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A LIFE OF THINGS BEING JUST A LITTLE BIT HARDER]&lt;/div&gt;
+&lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST] (click-replace: &quot;LOST&quot;)[DESTINED FOR A LIFE OF THINGS BEING JUST A LITTLE BIT HARDER]&lt;/div&gt;
 &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
 ]
 
@@ -428,29 +439,24 @@ tw-passage[tags~="claim-background"] {
 ]
 
 </tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
-
 |answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
 ]
-
 (link: &quot;&lt;span style=&#39;color:green;&#39;&gt;GREEN&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
 ]
-
 (link: &quot;&lt;span style=&#39;color:blue;&#39;&gt;BLUE&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
 ]
-
 (link: &quot;&lt;span style=&#39;color:#d4a000;&#39;&gt;YELLOW&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
-]]
-</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="475,425" size="100,100">|title&gt;[WHAT ANIMAL ARE YOU?]
-
+]
+]</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="475,425" size="100,100">|title&gt;[WHAT ANIMAL ARE YOU?]
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/cat.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Cat&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
@@ -743,17 +749,17 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 &lt;/div&gt;
 ]</tw-passagedata><tw-passagedata pid="21" name="Testimonials" tags="flag-background" position="625,175" size="100,100">|title&gt;[TESTIMONIALS]
 
-&quot;Still confused. More confused.”
+|reviewbox&gt;[
+&lt;div class=&quot;review-title&quot;&gt;REAL USER TESTIMONIALS&lt;/div&gt;
+&lt;div class=&quot;review-stars&quot;&gt;★★★★★ 4.8/5 based on 12,492 personal crises&lt;/div&gt;
 
-“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”
-
-“accurate results”
-
-&quot;I only took this as a joke and somehow ended up confronting the architecture of my desire.”
-
-“Five stars&quot;
-
-“Before this quiz I had questions. After this quiz I had targeted advertising.”</tw-passagedata><tw-passagedata pid="22" name="About Quiz" tags="flag-background" position="600,25" size="100,100">|title&gt;[ABOUT]
+&lt;div class=&quot;review-quote&quot;&gt;“Still confused. More confused.”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“Accurate results.”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“I only took this as a joke and somehow ended up confronting the architecture of my desire.”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“Five stars.”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“Before this quiz I had questions. After this quiz I had targeted advertising.”&lt;/div&gt;
+]</tw-passagedata><tw-passagedata pid="22" name="About Quiz" tags="flag-background" position="600,25" size="100,100">|title&gt;[ABOUT]
 
 This is a totally scientific online sexuality quiz designed to provide fast, discreet, and emotionally destabilising results.
 
