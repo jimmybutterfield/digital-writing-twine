@@ -563,7 +563,7 @@ ARE YOU GAY?
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/camping.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Camping&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Truth&quot;)
+	(goto: &quot;Closeted trip&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/wine.webp&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Wines&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -635,7 +635,7 @@ ARE YOU GAY?
 |skipbutton&gt;[
 (link: &quot;&lt;div class=&#39;skip-choice&#39;&gt;&lt;img class=&#39;skip-icon&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;skip-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Oh&quot;)
+	(goto: &quot;Closeted trip&quot;)
 ]
 ]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="825,225" size="100,100">&lt;div style=&quot;position:absolute; top:22px; left:32px; right:32px; text-align:left;&quot;&gt;
   &lt;div style=&quot;font-size:2rem; line-height:1.05; letter-spacing:1px; margin:0 0 10px 0;&quot;&gt;
@@ -658,12 +658,12 @@ ARE YOU GAY?
 
     &lt;div style=&quot;position:absolute; top:350px; left:10px;&quot;&gt;
       (link: &quot;SUBMIT&quot;)[
-        (goto: &quot;You gay&quot;)
+        (goto: &quot;Ending 3&quot;)
       ]
     &lt;/div&gt;
 
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="You gay" tags="" position="950,225" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Sleepover" tags="flag-background" position="500,575" size="100,100">|title&gt;[WHERE WOULD YOU CHOOSE TO SLEEP WHEN YOUR MALE FRIEND ASKS YOU FOR A SLEEPOVER?]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Sleepover" tags="flag-background" position="500,575" size="100,100">|title&gt;[WHERE WOULD YOU CHOOSE TO SLEEP WHEN YOUR MALE FRIEND ASKS YOU FOR A SLEEPOVER?]
 
 |answerrow&gt;[
 (link: &quot;In bed with your friend&quot;)[
@@ -679,7 +679,7 @@ ARE YOU GAY?
 (link: &quot;On the couch&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Animal&quot;)
-]]</tw-passagedata><tw-passagedata pid="16" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|posterroom&gt;[
+]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|posterroom&gt;[
 (link: &quot;&lt;img class=&#39;offer-poster&#39; src=&#39;images/closeted.png&#39; alt=&#39;Brokeback offer poster&#39;&gt;&quot;)[
 	(goto: &quot;Claim Offer&quot;)
 ]
@@ -704,9 +704,9 @@ ARE YOU GAY?
 |skipbutton&gt;[
 (link: &quot;&lt;div class=&#39;skip-choice&#39;&gt;&lt;img class=&#39;skip-icon&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;skip-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Sleepover&quot;)
+	(goto: &quot;Ending 3&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="17" name="Ending 1" tags="" position="325,900" size="100,100">(set: $roomCount to 0)
+]</tw-passagedata><tw-passagedata pid="16" name="Ending 1" tags="" position="325,900" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
 (enchant: ?Page, (css: &quot;--bgGray:0%;&quot;))
 
@@ -724,7 +724,7 @@ It can only tell you that you wanted certainty, and that wanting it made sense.
 
 Maybe what you were looking for was never a result.
 
-Maybe it was permission.</tw-passagedata><tw-passagedata pid="18" name="Ending 3" tags="" position="600,900" size="100,100">(set: $roomCount to 0)
+Maybe it was permission.</tw-passagedata><tw-passagedata pid="17" name="Ending 3" tags="" position="600,900" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
 (enchant: ?Page, (css: &quot;--bgGray:0%;&quot;))
 
@@ -748,7 +748,7 @@ We cannot confirm whether you are gay.
 
 We can confirm that you wanted someone, or something, to tell you that whatever you were feeling was real.
 
-And it was.</tw-passagedata><tw-passagedata pid="19" name="Ending 2" tags="" position="475,900" size="100,100">(set: $roomCount to 0)
+And it was.</tw-passagedata><tw-passagedata pid="18" name="Ending 2" tags="" position="475,900" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
 (enchant: ?Page, (css: &quot;--bgGray:0%;&quot;))
 
@@ -766,14 +766,14 @@ There is no final score.
 
 Only a person trying, for a little while, to make uncertainty feel measurable.
 
-Thank you for participating in this totally legitimate diagnostic experience.</tw-passagedata><tw-passagedata pid="20" name="Site Header" tags="header" position="425,125" size="100,100">|topnav&gt;[
+Thank you for participating in this totally legitimate diagnostic experience.</tw-passagedata><tw-passagedata pid="19" name="Site Header" tags="header" position="425,125" size="100,100">|topnav&gt;[
 &lt;div class=&quot;fake-nav&quot;&gt;
 [[HOME-&gt;Start]]
 [[QUIZ-&gt;Colour]]
 [[TESTIMONIALS-&gt;Testimonials]]
 [[ABOUT-&gt;About Quiz]]
 &lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="21" name="Testimonials" tags="flag-background" position="625,175" size="100,100">&lt;div style=&quot;position:absolute; top:52px; left:0; right:0; text-align:center;&quot;&gt;
+]</tw-passagedata><tw-passagedata pid="20" name="Testimonials" tags="flag-background" position="625,175" size="100,100">&lt;div style=&quot;position:absolute; top:52px; left:0; right:0; text-align:center;&quot;&gt;
   |title&gt;[TESTIMONIALS]
 
   |reviewbox&gt;[
@@ -788,7 +788,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   ]
 &lt;/div&gt;
 
-&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="About Quiz" tags="flag-background" position="600,25" size="100,100">&lt;div style=&quot;position:absolute; top:52px; left:0; right:0; text-align:center;&quot;&gt;
+&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="About Quiz" tags="flag-background" position="600,25" size="100,100">&lt;div style=&quot;position:absolute; top:52px; left:0; right:0; text-align:center;&quot;&gt;
   |title&gt;[ABOUT]
 
   |reviewbox&gt;[
@@ -799,14 +799,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   ]
 &lt;/div&gt;
 
-&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Oh" tags="pink-background" position="75,600" size="100,100">Oh...
-(t8n-delay: 4s) [Maybe you&#39;d prefer] 
-(t8n-delay: 8s) [(link: &quot;this&quot;)[
-(set: $roomCount to it + 1)
-(goto: &quot;Closeted trip&quot;)
-]]
-
-</tw-passagedata></tw-storydata>
+&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
