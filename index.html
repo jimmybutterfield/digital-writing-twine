@@ -56,7 +56,7 @@ tw-story {
 tw-passage {
   box-sizing: border-box;
   margin: 0;
-  padding: 2rem;
+  padding: 6rem 2rem 2rem 2rem;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -65,7 +65,7 @@ tw-passage {
   background: transparent;
 }
 
-/* Rainbow background passages */
+/* rainbow background passages */
 tw-passage[tags~="flag-background"]::before {
   content: "";
   position: fixed;
@@ -81,7 +81,7 @@ tw-passage[tags~="flag-background"]::before {
   opacity: 0.88;
 }
 
-/* Generic hover for normal links */
+/* generic hover for normal links */
 tw-link:hover,
 tw-broken-link:hover,
 .enchantment-link:hover,
@@ -94,7 +94,7 @@ tw-enchantment:hover {
      1px  1px 0 black;
 }
 
-/* Global title hook */
+/* global title hook */
 tw-hook[name="title"] {
   display: block;
   font-size: 2rem;
@@ -104,16 +104,23 @@ tw-hook[name="title"] {
   letter-spacing: 1px;
 }
 
-/* Top nav */
+/* fixed top nav */
 .fake-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 0.6rem 1rem;
-  background: rgba(255,255,255,0.35);
+  padding: 0.9rem 1rem;
+  background: rgba(255,255,255,0.5);
   border-bottom: 3px solid black;
   font-size: 1rem;
   text-align: center;
+  backdrop-filter: blur(2px);
 }
 
 .fake-nav tw-link {
@@ -132,25 +139,25 @@ tw-hook[name="title"] {
      1px  1px 0 black;
 }
 
-/* Start page */
+/* start page */
 tw-hook[name="hero"] {
   display: block;
   text-align: center;
-  margin-top: 2.2rem;
-  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-title {
   font-size: 4.4rem;
   line-height: 1;
   letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   line-height: 1.1;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 tw-hook[name="answerrow"] {
@@ -195,7 +202,7 @@ tw-hook[name="badgerow"] {
   align-items: center;
   gap: 0.7rem;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .fake-badge {
@@ -208,9 +215,9 @@ tw-hook[name="badgerow"] {
 
 tw-hook[name="reviewbox"] {
   display: block;
-  width: 360px;
+  width: 320px;
   max-width: 85vw;
-  margin: 1rem 2rem 1rem auto;
+  margin: 1rem auto 1rem auto;
   padding: 0.7rem;
   background: rgba(255,255,255,0.82);
   border: 4px solid black;
@@ -251,11 +258,11 @@ tw-hook[name="disclaimer"] {
   line-height: 1;
 }
 
-/* Quiz image rows */
+/* quiz image rows */
 tw-hook[name="iconrow"] {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -270,7 +277,7 @@ img.quiz-icon {
 tw-hook[name="albumrow"] {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   gap: 24px;
   flex-wrap: wrap;
@@ -294,15 +301,16 @@ img.album-cover {
   font-size: 0.9rem;
 }
 
-/* Brokeback / offer poster room */
+/* poster / offer room */
 tw-passage[tags~="offer-background"] {
   background: hotpink !important;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 6rem 0 0 0 !important;
   min-height: 100vh !important;
   width: 100% !important;
   max-width: 100% !important;
   position: relative !important;
+
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -329,7 +337,7 @@ tw-passage[tags~="offer-background"] tw-link {
 img.offer-poster {
   display: block !important;
   max-width: 58vw !important;
-  max-height: 78vh !important;
+  max-height: 72vh !important;
   width: auto !important;
   height: auto !important;
   margin: 0 auto !important;
@@ -342,7 +350,7 @@ tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
   transform: scale(1.02);
 }
 
-/* Skip button in poster room */
+/* skip button in poster room */
 tw-hook[name="skipbutton"] {
   position: absolute;
   bottom: 20px;
@@ -380,12 +388,13 @@ img.skip-icon {
   line-height: 1;
 }
 
-/* Claim page background only — layout handled inline in passage */
+/* claim page background only */
 tw-passage[tags~="claim-background"] {
   background: hotpink !important;
   min-height: 100vh !important;
   position: relative !important;
   overflow-y: auto !important;
+  padding-top: 6rem !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
 &lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY?(click-replace: &quot;GAY&quot;) [LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A LIFE OF THINGS BEING JUST A LITTLE BIT HARDER]&lt;/div&gt;
 &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
