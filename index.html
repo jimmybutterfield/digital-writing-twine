@@ -408,22 +408,28 @@ tw-passage[tags~="claim-background"] {
   padding-top: 4.2rem !important;
 }
 
-tw-passage[tags~="top-page"] {
-  padding-top: 0.6rem !important;
+tw-hook[name="topcontent"] {
+  display: block;
+  margin-top: -1.2rem;
 }
 
-tw-passage[tags~="top-page"] tw-hook[name="hero"] {
+tw-hook[name="topcontent"] tw-hook[name="hero"] {
   margin-top: 0 !important;
 }
 
-tw-passage[tags~="top-page"] tw-hook[name="title"] {
+tw-hook[name="topcontent"] tw-hook[name="title"] {
   margin-top: 0 !important;
-  margin-bottom: 0.6rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
-tw-passage[tags~="top-page"] tw-hook[name="reviewbox"] {
-  margin-top: 0.6rem !important;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background top-page" position="600,300" size="100,100">|hero&gt;[
+tw-hook[name="topcontent"] tw-hook[name="reviewbox"] {
+  margin-top: 0.5rem !important;
+}
+
+tw-hook[name="topcontent"] tw-hook[name="disclaimer"] {
+  margin-top: 0.4rem !important;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|topcontent&gt;[
+|hero&gt;[
 &lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST] (click-replace: &quot;LOST&quot;)[DESTINED FOR A LIFE OF THINGS BEING JUST A LITTLE BIT HARDER]&lt;/div&gt;
 &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
 ]
@@ -433,7 +439,7 @@ tw-passage[tags~="top-page"] tw-hook[name="reviewbox"] {
 	(set: $roomCount to it + 1)
 	(goto: &quot;Colour&quot;)
 ]]
-  
+
 |badgerow&gt;[
 &lt;div class=&quot;fake-badge&quot;&gt;✓ 100% scientific&lt;/div&gt;
 &lt;div class=&quot;fake-badge&quot;&gt;✓ discreet results&lt;/div&gt;
@@ -444,18 +450,16 @@ tw-passage[tags~="top-page"] tw-hook[name="reviewbox"] {
 |reviewbox&gt;[
 &lt;div class=&quot;review-title&quot;&gt;REAL USER TESTIMONIALS&lt;/div&gt;
 &lt;div class=&quot;review-stars&quot;&gt;★★★★★ 4.8/5 based on 12,492 personal crises&lt;/div&gt;
-
 &lt;div class=&quot;review-quote&quot;&gt;“Still confused. More confused.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”&lt;/div&gt;
-&lt;div class=&quot;review-quote&quot;&gt;“accurate results”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“Accurate results.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“I only took this as a joke and somehow ended up confronting the architecture of my desire.”&lt;/div&gt;
 ]
 
 |disclaimer&gt;[
 &lt;div class=&quot;fake-disclaimer&quot;&gt;Results may vary depending on honesty, denial, and aesthetic preference.&lt;/div&gt;
 ]
-
-</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
+]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
 |answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
 	(set: $roomCount to it + 1)
@@ -764,25 +768,29 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 [[TESTIMONIALS-&gt;Testimonials]]
 [[ABOUT-&gt;About Quiz]]
 &lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="21" name="Testimonials" tags="flag-background top-page" position="625,175" size="100,100">|title&gt;[TESTIMONIALS]
+]</tw-passagedata><tw-passagedata pid="21" name="Testimonials" tags="flag-background" position="625,175" size="100,100">|topcontent&gt;[
+|title&gt;[TESTIMONIALS]
 
 |reviewbox&gt;[
 &lt;div class=&quot;review-title&quot;&gt;REAL USER TESTIMONIALS&lt;/div&gt;
 &lt;div class=&quot;review-stars&quot;&gt;★★★★★ 4.8/5 based on 12,492 personal crises&lt;/div&gt;
-
 &lt;div class=&quot;review-quote&quot;&gt;“Still confused. More confused.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“Accurate results.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“I only took this as a joke and somehow ended up confronting the architecture of my desire.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“Five stars.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“Before this quiz I had questions. After this quiz I had targeted advertising.”&lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="22" name="About Quiz" tags="flag-background top-page" position="600,25" size="100,100">|title&gt;[ABOUT]
+]
+]</tw-passagedata><tw-passagedata pid="22" name="About Quiz" tags="flag-background" position="600,25" size="100,100">|topcontent&gt;[
+|title&gt;[ABOUT]
 
-This is a totally scientific online sexuality quiz designed to provide fast, discreet, and emotionally destabilising results.
-
-Using a rigorous methodology based on colours, songs, lifestyle preferences, internalised panic, and highly suspicious patterns of denial, this quiz promises to reveal truths about yourself that perhaps no quiz should.
-
-Please answer honestly. Or strategically. Or however you think will hurt the least.</tw-passagedata></tw-storydata>
+|reviewbox&gt;[
+&lt;div class=&quot;review-title&quot;&gt;ABOUT THIS QUIZ&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;This is a totally scientific online sexuality quiz designed to provide fast, discreet, and emotionally destabilising results.&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;Using a rigorous methodology based on colours, songs, lifestyle preferences, internalised panic, and suspicious levels of denial, this quiz promises to reveal truths about yourself that perhaps no quiz should.&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;Please answer honestly. Or strategically. Or however you think will hurt the least.&lt;/div&gt;
+]
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
