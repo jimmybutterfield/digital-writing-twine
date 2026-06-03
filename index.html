@@ -274,48 +274,60 @@ img.skip-icon {
   line-height: 1;
 }
 
-tw-hook[name="testimonialbanner"] {
+tw-hook[name="reviewbox"] {
   display: block;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 420px;
+  max-width: 90vw;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.85);
+  border: 4px solid black;
   box-sizing: border-box;
-  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.testimonial-track {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: scroll-testimonials 28s linear infinite;
+.review-title {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
-.testimonial-track span {
-  display: inline-block;
-  margin-right: 4rem;
+.review-stars {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
 }
 
-@keyframes scroll-testimonials {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|testimonialbanner&gt;[
-  &lt;div class=&quot;testimonial-track&quot;&gt;
-    &lt;span&gt;&quot;This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.&quot; &quot;Five stars. Still confused.&quot; &quot;accurate results&quot; &quot;I came here for answers and left with a discounted mountain retreat.&quot; &quot;This quiz knew less about my sexuality than I did&quot; &quot;I only took this as a joke and somehow ended up confronting the architecture of my desire.&quot;&lt;/span&gt;
-     
-  &lt;/div&gt;
-]
+.review-quote {
+  margin-bottom: 0.45rem;
+  line-height: 1.1;
+}
 
-|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
+.review-quote:last-child {
+  margin-bottom: 0;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
 
 |answerrow&gt;[
 (link: &quot;&lt;img class=&#39;start-button&#39; src=&#39;images/quiz-button.png&#39; alt=&#39;Take the quiz&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Colour&quot;)
-]]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
+]]
+
+
+|reviewbox&gt;[
+&lt;div class=&quot;review-title&quot;&gt;REAL USER TESTIMONIALS&lt;/div&gt;
+
+&lt;div class=&quot;review-stars&quot;&gt;★★★★★ 4.8/5 based on 12,492 personal crises&lt;/div&gt;
+
+&lt;div class=&quot;review-quote&quot;&gt;“accurate results”&lt;/div&gt;
+
+&lt;div class=&quot;review-quote&quot;&gt;“I only took this as a joke and somehow ended up confronting the architecture of my desire.”&lt;/div&gt;
+
+&lt;div class=&quot;review-quote&quot;&gt;“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”&lt;/div&gt;
+
+&lt;div class=&quot;review-quote&quot;&gt;“Still confused. No, more confused.”&lt;/div&gt;
+
+&lt;div class=&quot;review-quote&quot;&gt;“This quiz knew less about my sexuality than I did”&lt;/div&gt;
+]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
 
 |answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
