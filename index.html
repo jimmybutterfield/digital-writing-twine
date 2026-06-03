@@ -64,7 +64,6 @@ tw-passage {
   background: transparent;
 }
 
-/* background on every tagged passage */
 tw-passage[tags~="flag-background"]::before {
   content: "";
   position: fixed;
@@ -79,7 +78,10 @@ tw-passage[tags~="flag-background"]::before {
   pointer-events: none;
 }
 
-/* fallback hover for ordinary links */
+tw-passage[tags~="flag-background"]::before {
+  opacity: 0.88;
+}
+
 tw-link:hover,
 tw-broken-link:hover,
 .enchantment-link:hover,
@@ -274,60 +276,174 @@ img.skip-icon {
   line-height: 1;
 }
 
+/* START PAGE LAYOUT */
+
+.fake-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.35);
+  border-bottom: 3px solid black;
+  font-size: 1rem;
+  text-align: center;
+}
+
+tw-hook[name="hero"] {
+  display: block;
+  text-align: center;
+  margin-top: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: 4.4rem;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+tw-hook[name="answerrow"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+img.start-button {
+  width: 430px;
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  border: 4px solid black;
+  box-sizing: border-box;
+  filter: grayscale(0%);
+  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  background: rgba(255,255,255,0.15);
+}
+
+tw-hook[name="answerrow"] tw-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+tw-hook[name="answerrow"] tw-link:hover img.start-button {
+  filter: grayscale(50%);
+  border-color: limegreen;
+  transform: scale(1.03);
+}
+
+tw-hook[name="badgerow"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.fake-badge {
+  background: rgba(255,255,255,0.85);
+  border: 3px solid black;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 tw-hook[name="reviewbox"] {
   display: block;
-  width: 420px;
-  max-width: 90vw;
-  margin: 0 auto 1.5rem auto;
-  padding: 0.8rem;
-  background: rgba(255,255,255,0.85);
+  width: 360px;
+  max-width: 85vw;
+  margin: 1rem 2rem 1rem auto;
+  padding: 0.7rem;
+  background: rgba(255,255,255,0.82);
   border: 4px solid black;
   box-sizing: border-box;
   text-align: left;
 }
 
 .review-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .review-stars {
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.1;
+  margin-bottom: 0.55rem;
 }
 
 .review-quote {
-  margin-bottom: 0.45rem;
-  line-height: 1.1;
+  margin-bottom: 0.4rem;
+  line-height: 1.05;
 }
 
 .review-quote:last-child {
   margin-bottom: 0;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|title&gt;[ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]
+}
+
+tw-hook[name="disclaimer"] {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fake-disclaimer {
+  font-size: 0.85rem;
+  line-height: 1;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|topnav&gt;[
+&lt;div class=&quot;fake-nav&quot;&gt;
+  &lt;span&gt;HOME&lt;/span&gt;
+  &lt;span&gt;QUIZ&lt;/span&gt;
+  &lt;span&gt;RESULTS&lt;/span&gt;
+  &lt;span&gt;SUCCESS STORIES&lt;/span&gt;
+  &lt;span&gt;ABOUT&lt;/span&gt;
+&lt;/div&gt;
+]
+
+|hero&gt;[
+&lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY?(click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]]&lt;/div&gt;
+&lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
+]
 
 |answerrow&gt;[
 (link: &quot;&lt;img class=&#39;start-button&#39; src=&#39;images/quiz-button.png&#39; alt=&#39;Take the quiz&#39;&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Colour&quot;)
 ]]
-
+  
+|badgerow&gt;[
+&lt;div class=&quot;fake-badge&quot;&gt;✓ 100% scientific&lt;/div&gt;
+&lt;div class=&quot;fake-badge&quot;&gt;✓ discreet results&lt;/div&gt;
+&lt;div class=&quot;fake-badge&quot;&gt;✓ takes less than 20 minutes&lt;/div&gt;
+&lt;div class=&quot;fake-badge&quot;&gt;✓ trusted by 12,492 users&lt;/div&gt;
+]
 
 |reviewbox&gt;[
 &lt;div class=&quot;review-title&quot;&gt;REAL USER TESTIMONIALS&lt;/div&gt;
-
 &lt;div class=&quot;review-stars&quot;&gt;★★★★★ 4.8/5 based on 12,492 personal crises&lt;/div&gt;
 
-&lt;div class=&quot;review-quote&quot;&gt;“accurate results”&lt;/div&gt;
-
-&lt;div class=&quot;review-quote&quot;&gt;“I only took this as a joke and somehow ended up confronting the architecture of my desire.”&lt;/div&gt;
-
+&lt;div class=&quot;review-quote&quot;&gt;“Still confused. More confused.”&lt;/div&gt;
 &lt;div class=&quot;review-quote&quot;&gt;“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“accurate results”&lt;/div&gt;
+&lt;div class=&quot;review-quote&quot;&gt;“I only took this as a joke and somehow ended up confronting the architecture of my desire.”&lt;/div&gt;
+]
 
-&lt;div class=&quot;review-quote&quot;&gt;“Still confused. No, more confused.”&lt;/div&gt;
+|disclaimer&gt;[
+&lt;div class=&quot;fake-disclaimer&quot;&gt;Results may vary depending on honesty, denial, and aesthetic preference.&lt;/div&gt;
+]
 
-&lt;div class=&quot;review-quote&quot;&gt;“This quiz knew less about my sexuality than I did”&lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
+</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
 
 |answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
