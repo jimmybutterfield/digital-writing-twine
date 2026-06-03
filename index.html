@@ -11,7 +11,8 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Sexuality Quiz.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Sexuality Quiz" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="5FE31912-FA0C-4D36-A6D1-8B57FC1E9C47" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One:ital@0;1&display=swap');
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   min-height: 100%;
@@ -64,6 +65,7 @@ tw-passage {
   background: transparent;
 }
 
+/* Rainbow background passages */
 tw-passage[tags~="flag-background"]::before {
   content: "";
   position: fixed;
@@ -76,12 +78,10 @@ tw-passage[tags~="flag-background"]::before {
   filter: grayscale(var(--bgGray, 0%));
   transition: filter 0.8s ease;
   pointer-events: none;
-}
-
-tw-passage[tags~="flag-background"]::before {
   opacity: 0.88;
 }
 
+/* Generic hover for normal links */
 tw-link:hover,
 tw-broken-link:hover,
 .enchantment-link:hover,
@@ -94,8 +94,17 @@ tw-enchantment:hover {
      1px  1px 0 black;
 }
 
+/* Global title hook */
+tw-hook[name="title"] {
+  display: block;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
 
-
+/* Top nav */
 .fake-nav {
   display: flex;
   justify-content: center;
@@ -123,292 +132,7 @@ tw-enchantment:hover {
      1px  1px 0 black;
 }
 
-
-
-tw-hook[name="hero"] {
-  display: block;
-  text-align: center;
-  margin-top: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.hero-title {
-  font-size: 4.4rem;
-  line-height: 1;
-  letter-spacing: 1px;
-  margin-bottom: 0.4rem;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-tw-hook[name="answerrow"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-
-tw-hook[name="badgerow"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.fake-badge {
-  background: rgba(255,255,255,0.85);
-  border: 3px solid black;
-  padding: 0.4rem 0.7rem;
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-tw-hook[name="reviewbox"] {
-  display: block;
-  width: 320px;
-  max-width: 85vw;
-  margin: 1rem auto 1rem auto;
-  padding: 0.7rem;
-  background: rgba(255,255,255,0.82);
-  border: 4px solid black;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-.review-title {
-  font-size: 1.2rem;
-  line-height: 1;
-  margin-bottom: 0.45rem;
-}
-
-.review-stars {
-  font-size: 0.9rem;
-  line-height: 1.1;
-  margin-bottom: 0.55rem;
-}
-
-.review-quote {
-  margin-bottom: 0.4rem;
-  line-height: 1.05;
-}
-
-.review-quote:last-child {
-  margin-bottom: 0;
-}
-
-tw-hook[name="disclaimer"] {
-  display: block;
-  text-align: center;
-  margin-top: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.fake-disclaimer {
-  font-size: 0.85rem;
-  line-height: 1;
-}
-
-tw-hook[name="iconrow"] {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-img.quiz-icon {
-  width: 50px;
-  height: auto;
-  display: block;
-}
-
-tw-hook[name="albumrow"] {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.album-choice {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-img.album-cover {
-  width: 100px;
-  height: auto;
-  display: block;
-}
-
-.album-label {
-  margin-top: 8px;
-  font-size: 0.9rem;
-}
-
-tw-hook[name="title"] {
-  display: block;
-  font-size: 2rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-
-tw-hook[name="answerrow"] {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-img.start-button {
-  width: 400px;
-  height: auto;
-  display: block;
-  border: 4px solid black;
-  box-sizing: border-box;
-  filter: grayscale(50%);
-  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-tw-hook[name="answerrow"] tw-link {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-tw-hook[name="answerrow"] tw-link:hover img.start-button {
-  filter: grayscale(0%);
-  border-color: green;
-}
-
-
-
-tw-passage[tags~="offer-background"] {
-  background: hotpink !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  max-width: 100% !important;
-
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
-}
-
-tw-passage[tags~="offer-background"] tw-link {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  line-height: 0 !important;
-  cursor: pointer !important;
-}
-
-img.offer-poster {
-  display: block !important;
-  max-width: 58vw !important;
-  max-height: 78vh !important;
-  width: auto !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  border: 4px solid black !important;
-  box-sizing: border-box !important;
-}
-
-tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
-  border-color: limegreen !important;
-  transform: scale(1.02);
-}
-
-
-tw-passage[tags~="claim-background"] {
-  background: hotpink !important;
-  min-height: 100vh !important;
-  position: relative !important;
-  overflow-y: auto !important;
-}
-
-tw-passage[tags~="offer-background"] {
-  position: relative;
-}
-
-tw-hook[name="skipbutton"] {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 20;
-}
-
-tw-hook[name="skipbutton"] tw-link {
-  display: block;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 0;
-  cursor: pointer;
-}
-
-.skip-choice {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-img.skip-icon {
-  width: 40px;
-  height: auto;
-  display: block;
-}
-
-.skip-label {
-  margin-top: 4px;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* START PAGE LAYOUT */
-
-.fake-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0.6rem 1rem;
-  background: rgba(255,255,255,0.35);
-  border-bottom: 3px solid black;
-  font-size: 1rem;
-  text-align: center;
-}
-
+/* Start page */
 tw-hook[name="hero"] {
   display: block;
   text-align: center;
@@ -431,21 +155,13 @@ tw-hook[name="hero"] {
 
 tw-hook[name="answerrow"] {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  text-align: center;
   margin-bottom: 1rem;
-}
-
-img.start-button {
-  width: 430px;
-  max-width: 80vw;
-  height: auto;
-  display: block;
-  border: 4px solid black;
-  box-sizing: border-box;
-  filter: grayscale(0%);
-  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  background: rgba(255,255,255,0.15);
 }
 
 tw-hook[name="answerrow"] tw-link {
@@ -455,8 +171,20 @@ tw-hook[name="answerrow"] tw-link {
   padding: 0 !important;
 }
 
-tw-hook[name="answerrow"] tw-link:hover img.start-button {
+img.start-button {
+  width: 430px;
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  border: 4px solid black;
+  box-sizing: border-box;
   filter: grayscale(50%);
+  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  background: rgba(255,255,255,0.15);
+}
+
+tw-hook[name="answerrow"] tw-link:hover img.start-button {
+  filter: grayscale(0%);
   border-color: limegreen;
   transform: scale(1.03);
 }
@@ -521,6 +249,143 @@ tw-hook[name="disclaimer"] {
 .fake-disclaimer {
   font-size: 0.85rem;
   line-height: 1;
+}
+
+/* Quiz image rows */
+tw-hook[name="iconrow"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+img.quiz-icon {
+  width: 50px;
+  height: auto;
+  display: block;
+}
+
+tw-hook[name="albumrow"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.album-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+img.album-cover {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.album-label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* Brokeback / offer poster room */
+tw-passage[tags~="offer-background"] {
+  background: hotpink !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+tw-passage[tags~="offer-background"] tw-link {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: 0 !important;
+  cursor: pointer !important;
+}
+
+img.offer-poster {
+  display: block !important;
+  max-width: 58vw !important;
+  max-height: 78vh !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  border: 4px solid black !important;
+  box-sizing: border-box !important;
+}
+
+tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
+  border-color: limegreen !important;
+  transform: scale(1.02);
+}
+
+/* Skip button in poster room */
+tw-hook[name="skipbutton"] {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+tw-hook[name="skipbutton"] tw-link {
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.skip-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+img.skip-icon {
+  width: 40px;
+  height: auto;
+  display: block;
+}
+
+.skip-label {
+  margin-top: 4px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Claim page background only — layout handled inline in passage */
+tw-passage[tags~="claim-background"] {
+  background: hotpink !important;
+  min-height: 100vh !important;
+  position: relative !important;
+  overflow-y: auto !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
 &lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY?&lt;/div&gt;
 &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
