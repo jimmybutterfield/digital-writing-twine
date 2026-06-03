@@ -122,7 +122,6 @@ tw-hook[name="title"] {
   left: 0;
   right: 0;
   z-index: 1000;
-
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -150,7 +149,7 @@ tw-hook[name="title"] {
      1px  1px 0 black;
 }
 
-/* start page */
+/* start / top pages */
 tw-hook[name="hero"] {
   display: block;
   text-align: center;
@@ -171,6 +170,32 @@ tw-hook[name="hero"] {
   margin-bottom: 0.8rem;
 }
 
+.start-button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+img.start-button {
+  display: block !important;
+  width: 430px;
+  max-width: 80vw;
+  height: auto;
+  border: 4px solid black;
+  box-sizing: border-box;
+  filter: grayscale(50%);
+  background: rgba(255,255,255,0.15);
+  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.start-button-wrap:hover img.start-button {
+  filter: grayscale(0%) !important;
+  border-color: limegreen !important;
+  transform: scale(1.03);
+}
+
 tw-hook[name="answerrow"] {
   display: flex;
   flex-direction: row;
@@ -187,24 +212,6 @@ tw-hook[name="answerrow"] tw-link {
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-}
-
-img.start-button {
-  width: 430px;
-  max-width: 80vw;
-  height: auto;
-  display: block;
-  border: 4px solid black;
-  box-sizing: border-box;
-  filter: grayscale(50%);
-  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  background: rgba(255,255,255,0.15);
-}
-
-tw-hook[name="answerrow"] tw-link:hover img.start-button {
-  filter: grayscale(0%);
-  border-color: limegreen;
-  transform: scale(1.03);
 }
 
 tw-hook[name="badgerow"] {
@@ -234,6 +241,17 @@ tw-hook[name="reviewbox"] {
   border: 4px solid black;
   box-sizing: border-box;
   text-align: left;
+}
+
+.reviewbox-fake {
+  width: 300px;
+  max-width: 85vw;
+  padding: 0.7rem;
+  background: rgba(255,255,255,0.82);
+  border: 4px solid black;
+  box-sizing: border-box;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .review-title {
@@ -321,7 +339,6 @@ tw-passage[tags~="offer-background"] {
   width: 100% !important;
   max-width: 100% !important;
   position: relative !important;
-
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -406,71 +423,18 @@ tw-passage[tags~="claim-background"] {
   position: relative !important;
   overflow-y: auto !important;
   padding-top: 4.2rem !important;
-}
-
-.reviewbox-fake {
-  width: 300px;
-  max-width: 85vw;
-  padding: 0.7rem;
-  background: rgba(255,255,255,0.82);
-  border: 4px solid black;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-tw-hook[name="startquiz"] {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.start-button-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-.start-button-hitbox {
-  display: inline-block;
-  cursor: pointer;
-  line-height: 0;
-}
-
-.start-button-hitbox img.start-button {
-  display: block !important;
-  width: 430px;
-  max-width: 80vw;
-  height: auto;
-  border: 4px solid black;
-  box-sizing: border-box;
-  filter: grayscale(50%);
-  background: rgba(255,255,255,0.15);
-  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-.start-button-hitbox:hover img.start-button {
-  filter: grayscale(0%) !important;
-  border-color: limegreen !important;
-  transform: scale(1.03);
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">&lt;div style=&quot;position:absolute; top:52px; left:0; right:0; text-align:center;&quot;&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|startcontent&gt;[
+&lt;div style=&quot;position:absolute; top:52px; left:0; right:0; text-align:center;&quot;&gt;
   &lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST] (click-replace: &quot;LOST&quot;)[DESTINED FOR A LIFE OF THINGS BEING JUST A LITTLE BIT HARDER]&lt;/div&gt;
   &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
 
-|startquiz&gt;[
-&lt;div class=&quot;start-button-wrap&quot;&gt;
-  &lt;div class=&quot;start-button-hitbox&quot;&gt;
+  |startquiz&gt;[
+  &lt;div class=&quot;start-button-wrap&quot;&gt;
     &lt;img class=&quot;start-button&quot; src=&quot;images/quiz-button.png&quot; alt=&quot;Take the quiz&quot;&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-]
+  ]
 
-(click: ?startquiz)[
-  (set: $roomCount to it + 1)
-  (goto: &quot;Colour&quot;)
-]
-
-  &lt;div style=&quot;display:flex; justify-content:center; gap:0.7rem; flex-wrap:wrap; margin-bottom:1rem;&quot;&gt;
+  &lt;div style=&quot;display:flex; justify-content:center; gap:0.7rem; flex-wrap:wrap; margin-top:1rem; margin-bottom:1rem;&quot;&gt;
     &lt;div class=&quot;fake-badge&quot;&gt;✓ 100% scientific&lt;/div&gt;
     &lt;div class=&quot;fake-badge&quot;&gt;✓ discreet results&lt;/div&gt;
     &lt;div class=&quot;fake-badge&quot;&gt;✓ takes less than 2 minutes&lt;/div&gt;
@@ -492,6 +456,12 @@ tw-hook[name="startquiz"] {
     &lt;div class=&quot;fake-disclaimer&quot;&gt;Results may vary depending on honesty, denial, and aesthetic preference.&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+]
+
+(click: ?startquiz)[
+  (set: $roomCount to it + 1)
+  (goto: &quot;Colour&quot;)
+]
 
 &lt;div style=&quot;height: 1400px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
 |answerrow&gt;[
