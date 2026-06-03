@@ -94,6 +94,126 @@ tw-enchantment:hover {
      1px  1px 0 black;
 }
 
+
+
+.fake-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.35);
+  border-bottom: 3px solid black;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.fake-nav tw-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.fake-nav tw-link:hover {
+  color: white !important;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+
+
+tw-hook[name="hero"] {
+  display: block;
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 4.4rem;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+tw-hook[name="answerrow"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+tw-hook[name="badgerow"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.fake-badge {
+  background: rgba(255,255,255,0.85);
+  border: 3px solid black;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+tw-hook[name="reviewbox"] {
+  display: block;
+  width: 320px;
+  max-width: 85vw;
+  margin: 1rem auto 1rem auto;
+  padding: 0.7rem;
+  background: rgba(255,255,255,0.82);
+  border: 4px solid black;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.review-title {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-bottom: 0.45rem;
+}
+
+.review-stars {
+  font-size: 0.9rem;
+  line-height: 1.1;
+  margin-bottom: 0.55rem;
+}
+
+.review-quote {
+  margin-bottom: 0.4rem;
+  line-height: 1.05;
+}
+
+.review-quote:last-child {
+  margin-bottom: 0;
+}
+
+tw-hook[name="disclaimer"] {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.fake-disclaimer {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
 tw-hook[name="iconrow"] {
   display: flex;
   flex-direction: row;
@@ -401,18 +521,8 @@ tw-hook[name="disclaimer"] {
 .fake-disclaimer {
   font-size: 0.85rem;
   line-height: 1;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="START PAGE" tags="flag-background" position="600,300" size="100,100">|topnav&gt;[
-&lt;div class=&quot;fake-nav&quot;&gt;
-  &lt;span&gt;HOME&lt;/span&gt;
-  &lt;span&gt;QUIZ&lt;/span&gt;
-  &lt;span&gt;RESULTS&lt;/span&gt;
-  &lt;span&gt;SUCCESS STORIES&lt;/span&gt;
-  &lt;span&gt;ABOUT&lt;/span&gt;
-&lt;/div&gt;
-]
-
-|hero&gt;[
-&lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY?(click-replace: &quot;GAY&quot;)[LOST](click-replace: &quot;LOST&quot;) [DESTINED FOR A CHILDHOOD OF CONFUSION AND A LIFETIME OF THINGS BEING JUST A LITTLE MORE COMPLICATED]&lt;/div&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
+&lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY?&lt;/div&gt;
 &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
 ]
 
@@ -425,7 +535,7 @@ tw-hook[name="disclaimer"] {
 |badgerow&gt;[
 &lt;div class=&quot;fake-badge&quot;&gt;✓ 100% scientific&lt;/div&gt;
 &lt;div class=&quot;fake-badge&quot;&gt;✓ discreet results&lt;/div&gt;
-&lt;div class=&quot;fake-badge&quot;&gt;✓ takes less than 20 minutes&lt;/div&gt;
+&lt;div class=&quot;fake-badge&quot;&gt;✓ takes less than 2 minutes&lt;/div&gt;
 &lt;div class=&quot;fake-badge&quot;&gt;✓ trusted by 12,492 users&lt;/div&gt;
 ]
 
@@ -750,7 +860,32 @@ There is no final score.
 
 Only a person trying, for a little while, to make uncertainty feel measurable.
 
-Thank you for participating in this totally legitimate diagnostic experience.</tw-passagedata></tw-storydata>
+Thank you for participating in this totally legitimate diagnostic experience.</tw-passagedata><tw-passagedata pid="20" name="Site Header" tags="header" position="425,125" size="100,100">|topnav&gt;[
+&lt;div class=&quot;fake-nav&quot;&gt;
+[[HOME-&gt;Start]]
+[[QUIZ-&gt;Colour]]
+[[TESTIMONIALS-&gt;Testimonials]]
+[[ABOUT-&gt;About Quiz]]
+&lt;/div&gt;
+]</tw-passagedata><tw-passagedata pid="21" name="Testimonials" tags="flag-background" position="625,175" size="100,100">|title&gt;[TESTIMONIALS]
+
+&quot;Still confused. More confused.”
+
+“This quiz changed my life. I was 14 and terrified and now I get 10% off horse riding.”
+
+“accurate results”
+
+&quot;I only took this as a joke and somehow ended up confronting the architecture of my desire.”
+
+“Five stars&quot;
+
+“Before this quiz I had questions. After this quiz I had targeted advertising.”</tw-passagedata><tw-passagedata pid="22" name="About Quiz" tags="flag-background" position="600,25" size="100,100">|title&gt;[ABOUT]
+
+This is a totally scientific online sexuality quiz designed to provide fast, discreet, and emotionally destabilising results.
+
+Using a rigorous methodology based on colours, songs, lifestyle preferences, internalised panic, and highly suspicious patterns of denial, this quiz promises to reveal truths about yourself that perhaps no quiz should.
+
+Please answer honestly. Or strategically. Or however you think will hurt the least.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
