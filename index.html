@@ -365,13 +365,13 @@ tw-passage[tags~="claim-background"] {
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/gay-wine.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Gay wines&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Next&quot;)
+	(goto: &quot;Sleepover&quot;)
 ]]</tw-passagedata><tw-passagedata pid="10" name="Truth" tags="flag-background" position="175,250" size="100,100">|title&gt;[Was that the truth?]
 
 |answerrow&gt;[
 (link: &quot;yes&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Next&quot;)
+	(goto: &quot;Sleepover&quot;)
 ]
 (link: &quot;no&quot;)[
 	(set: $roomCount to it + 1)
@@ -416,6 +416,13 @@ tw-passage[tags~="claim-background"] {
 (live: 3s)[
 	(show: ?fireaudio)
 	(stop:)
+]
+
+
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Closeted trip&quot;)
 ]</tw-passagedata><tw-passagedata pid="13" name="Claim Offer" tags="claim-background" position="825,225" size="100,100">&lt;div style=&quot;position:absolute; top:22px; left:32px; right:32px; text-align:left;&quot;&gt;
   &lt;div style=&quot;font-size:2rem; line-height:1.05; letter-spacing:1px; margin:0 0 10px 0;&quot;&gt;
     Claim your one-time-only special sexuality quiz offer
@@ -442,7 +449,23 @@ tw-passage[tags~="claim-background"] {
     &lt;/div&gt;
 
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="You gay" tags="" position="950,225" size="100,100"></tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="You gay" tags="" position="950,225" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Sleepover" tags="flag-background" position="500,575" size="100,100">|title&gt;[WHERE WOULD YOU CHOOSE TO SLEEP WHEN YOUR MALE FRIEND ASKS YOU FOR A SLEEPOVER?]
+
+|answerrow&gt;[
+(link: &quot;In bed with your friend&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;You gay&quot;)
+]
+
+(link: &quot;On the floor beside your friend&#39;s bed&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Animal&quot;)
+]
+
+(link: &quot;On the couch&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Animal&quot;)
+]]</tw-passagedata><tw-passagedata pid="16" name="Closeted trip" tags="" position="175,700" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
