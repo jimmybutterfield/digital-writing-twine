@@ -418,25 +418,38 @@ tw-passage[tags~="claim-background"] {
   text-align: left;
 }
 
-.start-button-wrap {
-  display: flex;
-  justify-content: center;
+tw-hook[name="startquiz"] {
+  display: block;
+  width: 100%;
+  text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.start-button-wrap tw-link {
-  display: inline-block !important;
-  line-height: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  cursor: pointer !important;
+.start-button-wrap {
+  display: flex;
+  justify-content: center;
 }
 
-.start-button-wrap tw-link:hover img.start-button {
+.start-button-hitbox {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.start-button-hitbox img.start-button {
+  display: block !important;
+  width: 430px;
+  max-width: 80vw;
+  height: auto;
+  border: 4px solid black;
+  box-sizing: border-box;
+  filter: grayscale(50%);
+  background: rgba(255,255,255,0.15);
+  transition: filter 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.start-button-hitbox:hover img.start-button {
   filter: grayscale(0%) !important;
   border-color: limegreen !important;
   transform: scale(1.03);
@@ -444,12 +457,18 @@ tw-passage[tags~="claim-background"] {
   &lt;div class=&quot;hero-title&quot;&gt;ARE YOU GAY? (click-replace: &quot;GAY&quot;)[LOST] (click-replace: &quot;LOST&quot;)[DESTINED FOR A LIFE OF THINGS BEING JUST A LITTLE BIT HARDER]&lt;/div&gt;
   &lt;div class=&quot;hero-subtitle&quot;&gt;Take our totally scientific sexuality test now&lt;/div&gt;
 
-  &lt;div class=&quot;start-button-wrap&quot;&gt;
-  (link: &quot;&lt;img class=&#39;start-button&#39; src=&#39;images/quiz-button.png&#39; alt=&#39;Take the quiz&#39;&gt;&quot;)[
-    (set: $roomCount to it + 1)
-    (goto: &quot;Colour&quot;)
-  ]
+|startquiz&gt;[
+&lt;div class=&quot;start-button-wrap&quot;&gt;
+  &lt;div class=&quot;start-button-hitbox&quot;&gt;
+    &lt;img class=&quot;start-button&quot; src=&quot;images/quiz-button.png&quot; alt=&quot;Take the quiz&quot;&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
+]
+
+(click: ?startquiz)[
+  (set: $roomCount to it + 1)
+  (goto: &quot;Colour&quot;)
+]
 
   &lt;div style=&quot;display:flex; justify-content:center; gap:0.7rem; flex-wrap:wrap; margin-bottom:1rem;&quot;&gt;
     &lt;div class=&quot;fake-badge&quot;&gt;✓ 100% scientific&lt;/div&gt;
