@@ -668,17 +668,17 @@ ARE YOU GAY?
 |answerrow&gt;[
 (link: &quot;In bed with your friend&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;You gay&quot;)
+	(goto: &quot;Otter&quot;)
 ]
 
 (link: &quot;On the floor beside your friend&#39;s bed&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Animal&quot;)
+	(goto: &quot;Otter&quot;)
 ]
 
 (link: &quot;On the couch&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Animal&quot;)
+	(goto: &quot;Otter&quot;)
 ]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|posterroom&gt;[
 (link: &quot;&lt;img class=&#39;offer-poster&#39; src=&#39;images/closeted.png&#39; alt=&#39;Brokeback offer poster&#39;&gt;&quot;)[
 	(goto: &quot;Claim Offer&quot;)
@@ -704,7 +704,7 @@ ARE YOU GAY?
 |skipbutton&gt;[
 (link: &quot;&lt;div class=&#39;skip-choice&#39;&gt;&lt;img class=&#39;skip-icon&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;skip-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Ending 3&quot;)
+	(goto: &quot;Sleepover&quot;)
 ]
 ]</tw-passagedata><tw-passagedata pid="16" name="Ending 1" tags="flag-background" position="325,900" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
@@ -799,7 +799,29 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   ]
 &lt;/div&gt;
 
-&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Otter" tags="flag-background" position="625,575" size="100,100">|title&gt;[Which otter resonates with you the most?]
+
+|answerrow&gt;[
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/angry-otter.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Angry otter&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Friday night&quot;)
+]
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/cute-otter.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Cute otter&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Friday night&quot;)
+]
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/giant-river-otter.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Giant river otter&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Friday night&quot;)
+]
+
+(link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/polyamorous-otter.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;polyamorous otter.jpg&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Friday night&quot;)
+]]
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
