@@ -1017,6 +1017,12 @@ Our systems have detected:
 (if: $chosenSleepover is &quot;On the couch&quot;)[
 - a couch that was definitely more comfortable than the bed
 ]
+(if: $chosenHonest is &quot;no&quot;)[
+- a &quot;no&quot; on the honesty question that we have also logged
+]
+(if: $chosenHonest is &quot;maybe&quot;)[
+- a &quot;maybe&quot; that told us more than a yes or no ever could
+]
 (if: $chosenOtter is &quot;angry otter&quot;)[
 - an angry otter that we found surprisingly revealing
 ]
@@ -1232,16 +1238,19 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 |answerrow&gt;[
 (link: &quot;YES&quot;)[
 	(set: $roomCount to it + 1)
+    (set: $chosenHonest to &quot;yes&quot;)
 	(goto: &quot;Otter&quot;)
 ]
 
 (link: &quot;NO&quot;)[
 	(set: $roomCount to it + 1)
+    (set: $chosenHonest to &quot;no&quot;)
 	(goto: &quot;Otter&quot;)
 ]
 
 (link: &quot;MAYBE&quot;)[
 	(set: $roomCount to it + 1)
+    (set: $chosenHonest to &quot;maybe&quot;)
 	(goto: &quot;Otter&quot;)
 ]]</tw-passagedata><tw-passagedata pid="29" name="notice" tags="flag-background" position="1425,400" size="100,100">|title&gt;[What do you notice when an attractive man walks past?]
 
@@ -1256,7 +1265,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 	(goto: &quot;honest&quot;)
 ]
 
-(link: &quot;his everything and then pretend to be at the phone&quot;)[
+(link: &quot;his everything and then pretend to be on the phone&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;honest&quot;)
 ]
