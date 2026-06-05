@@ -11,6 +11,8 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Sexuality Quiz.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Sexuality Quiz" startnode="23" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="5FE31912-FA0C-4D36-A6D1-8B57FC1E9C47" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One:ital@0;1&display=swap');
 
+/* ─── BASE RESET ─────────────────────────────────────────────── */
+
 html,
 body {
   margin: 0;
@@ -44,6 +46,18 @@ textarea {
      1px  1px 0 white;
 }
 
+/* Collapse Harlowe-generated empty paragraphs */
+tw-passage p:empty {
+  display: none !important;
+  margin: 0 !important;
+}
+
+tw-passage > br {
+  display: none !important;
+}
+
+/* ─── STORY & PASSAGE LAYOUT ─────────────────────────────────── */
+
 tw-story {
   display: block !important;
   margin: 0 !important;
@@ -67,7 +81,9 @@ tw-passage {
   background: transparent;
 }
 
-/* rainbow background passages */
+/* ─── BACKGROUNDS ────────────────────────────────────────────── */
+
+/* Rainbow flag — fades to grey as $roomCount increases */
 tw-passage[tags~="flag-background"]::before {
   content: "";
   position: fixed;
@@ -83,7 +99,31 @@ tw-passage[tags~="flag-background"]::before {
   opacity: 0.88;
 }
 
-/* generic hover for normal links */
+/* Hotpink offer rooms */
+tw-passage[tags~="offer-background"] {
+  background: hotpink !important;
+  margin: 0 !important;
+  padding: 4.2rem 0 0 0 !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Hotpink claim form page */
+tw-passage[tags~="claim-background"] {
+  background: hotpink !important;
+  min-height: 100vh !important;
+  position: relative !important;
+  overflow-y: auto !important;
+  padding-top: 4.2rem !important;
+}
+
+/* ─── LINKS ──────────────────────────────────────────────────── */
+
 tw-link:hover,
 tw-broken-link:hover,
 .enchantment-link:hover,
@@ -96,26 +136,31 @@ tw-enchantment:hover {
      1px  1px 0 black;
 }
 
-/* header hook should not push content down */
+/* Reset all links inside offer rooms (overridden per component below) */
+tw-passage[tags~="offer-background"] tw-link {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: 0 !important;
+  cursor: pointer !important;
+}
+
+/* ─── NAVIGATION ─────────────────────────────────────────────── */
+
+/* Zero-height wrapper so the header hook doesn't push content down */
 tw-hook[name="topnav"] {
   display: block !important;
   height: 0 !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
   line-height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* global title hook */
-tw-hook[name="title"] {
-  display: block;
-  font-size: 2rem;
-  line-height: 1.1;
-  margin: 0 0 0.8rem 0 !important;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-/* fixed top nav */
 .fake-nav {
   position: fixed;
   top: 0;
@@ -149,7 +194,19 @@ tw-hook[name="title"] {
      1px  1px 0 black;
 }
 
-/* hero / start page */
+/* ─── TITLE HOOK ─────────────────────────────────────────────── */
+
+tw-hook[name="title"] {
+  display: block;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0 0 0.8rem 0 !important;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ─── HERO / START PAGE ──────────────────────────────────────── */
+
 tw-hook[name="hero"] {
   display: block;
   text-align: center;
@@ -171,7 +228,8 @@ tw-hook[name="hero"] tw-hook[name="title"] {
   margin-bottom: 0.8rem;
 }
 
-/* answer rows */
+/* ─── ANSWER ROWS ────────────────────────────────────────────── */
+
 tw-hook[name="answerrow"] {
   display: flex;
   flex-direction: row;
@@ -194,7 +252,8 @@ tw-hook[name="answerrow"] tw-link {
   cursor: pointer !important;
 }
 
-/* start button */
+/* ─── START BUTTON ───────────────────────────────────────────── */
+
 img.start-button {
   display: block !important;
   width: 430px;
@@ -213,7 +272,28 @@ tw-hook[name="answerrow"] tw-link:hover img.start-button {
   transform: scale(1.03);
 }
 
-/* badges */
+/* ─── ALBUM / IMAGE CHOICES ──────────────────────────────────── */
+
+.album-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+img.album-cover {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.album-label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* ─── TRUST BADGES ───────────────────────────────────────────── */
+
 tw-hook[name="badgerow"] {
   display: flex;
   justify-content: center;
@@ -231,7 +311,8 @@ tw-hook[name="badgerow"] {
   line-height: 1;
 }
 
-/* review box */
+/* ─── REVIEW BOX ─────────────────────────────────────────────── */
+
 tw-hook[name="reviewbox"] {
   display: block;
   width: 300px;
@@ -265,7 +346,8 @@ tw-hook[name="reviewbox"] {
   margin-bottom: 0;
 }
 
-/* disclaimer */
+/* ─── DISCLAIMER ─────────────────────────────────────────────── */
+
 tw-hook[name="disclaimer"] {
   display: block;
   text-align: center;
@@ -278,98 +360,8 @@ tw-hook[name="disclaimer"] {
   line-height: 1;
 }
 
-/* quiz image rows */
-tw-hook[name="iconrow"] {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+/* ─── SKIP BUTTON ────────────────────────────────────────────── */
 
-img.quiz-icon {
-  width: 50px;
-  height: auto;
-  display: block;
-}
-
-tw-hook[name="albumrow"] {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.album-choice {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-img.album-cover {
-  width: 100px;
-  height: auto;
-  display: block;
-}
-
-.album-label {
-  margin-top: 8px;
-  font-size: 0.9rem;
-}
-
-/* poster / offer room */
-tw-passage[tags~="offer-background"] {
-  background: hotpink !important;
-  margin: 0 !important;
-  padding: 4.2rem 0 0 0 !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  position: relative !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-tw-passage[tags~="offer-background"] tw-hook[name="posterroom"] {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
-}
-
-tw-passage[tags~="offer-background"] tw-link {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  line-height: 0 !important;
-  cursor: pointer !important;
-}
-
-img.offer-poster {
-  display: block !important;
-  max-width: 58vw !important;
-  max-height: 72vh !important;
-  width: auto !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  border: 4px solid black !important;
-  box-sizing: border-box !important;
-}
-
-tw-passage[tags~="offer-background"] tw-link:hover img.offer-poster {
-  border-color: limegreen !important;
-  transform: scale(1.02);
-}
-
-/* skip button in poster room */
 tw-hook[name="skipbutton"] {
   position: absolute;
   bottom: 20px;
@@ -407,20 +399,165 @@ img.skip-icon {
   line-height: 1;
 }
 
-/* claim page background only */
-tw-passage[tags~="claim-background"] {
-  background: hotpink !important;
-  min-height: 100vh !important;
-  position: relative !important;
-  overflow-y: auto !important;
-  padding-top: 4.2rem !important;
+/* ─── OFFER CARDS (Brokeback, Closeted trip) ─────────────────── */
+
+tw-hook[name="offercard"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-tw-passage[tags~="pink-background"] {
-  background: hotpink !important;
+.offer-card {
+  max-width: 480px;
+  width: 85vw;
+  background: white;
+  border: 4px solid black;
+  box-sizing: border-box;
 }
 
-/* Cookie consent banner */
+.offer-card-content {
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.offer-card-content * {
+  text-shadow: none !important;
+  color: black !important;
+}
+
+.offer-card-headline {
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.offer-card-brand {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  border: 3px solid black;
+  padding: 0.4rem 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.offer-card-location {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.offer-card-details {
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.offer-card-detail-item {
+  margin-bottom: 0.2rem;
+}
+
+.offer-card-guarantee {
+  font-size: 1rem;
+  background: black;
+  color: white !important;
+  padding: 0.35rem 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.offer-card-fine-print {
+  font-size: 0.75rem;
+}
+
+/* Button link inside offer card — overrides the blanket link reset */
+tw-passage[tags~="offer-background"] tw-hook[name="offercard"] tw-link {
+  display: inline-block !important;
+  background: black !important;
+  color: white !important;
+  padding: 0.6rem 1.5rem !important;
+  font-size: 1.1rem !important;
+  text-shadow: none !important;
+  border: 3px solid black !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  margin-top: 0.4rem;
+}
+
+tw-passage[tags~="offer-background"] tw-hook[name="offercard"] tw-link:hover {
+  background: hotpink !important;
+  color: black !important;
+}
+
+/* ─── TEXT OFFER CARDS (Banana, Kylie) ───────────────────────── */
+
+.text-offer {
+  background: white;
+  border: 4px solid black;
+  padding: 2rem;
+  max-width: 500px;
+  width: 85vw;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.text-offer * {
+  text-shadow: none !important;
+  color: black !important;
+}
+
+.offer-headline {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.offer-body {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.offer-brand {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  border: 3px solid black;
+  padding: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.offer-subtext {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* Button link inside text-offer — overrides the blanket link reset */
+tw-passage[tags~="offer-background"] .text-offer tw-link {
+  display: inline-block !important;
+  background: black !important;
+  color: white !important;
+  padding: 0.6rem 1.5rem !important;
+  font-size: 1.1rem !important;
+  text-shadow: none !important;
+  border: 3px solid black !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+
+tw-passage[tags~="offer-background"] .text-offer tw-link:hover {
+  background: hotpink !important;
+  color: black !important;
+}
+
+/* ─── COOKIE CONSENT ─────────────────────────────────────────── */
+
 .cookie-modal {
   position: fixed;
   bottom: 0;
@@ -468,151 +605,6 @@ tw-passage[tags~="pink-background"] {
   background: white !important;
   color: black !important;
   text-shadow: none !important;
-}
-
-/* Text-based offer rooms (Banana, Kylie) */
-.text-offer {
-  background: white;
-  border: 4px solid black;
-  padding: 2rem;
-  max-width: 500px;
-  width: 85vw;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.offer-headline {
-  font-size: 3rem;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.offer-body {
-  font-size: 1.1rem;
-  line-height: 1.2;
-  margin-bottom: 0.4rem;
-}
-
-.offer-brand {
-  font-size: 1.8rem;
-  line-height: 1.1;
-  border: 3px solid black;
-  padding: 0.4rem;
-  margin: 0.6rem 0;
-}
-
-.offer-subtext {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-/* Offer card: poster + info side by side */
-tw-hook[name="offercard"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.offer-card {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  max-width: 720px;
-  width: 90vw;
-  max-height: calc(100vh - 6rem);
-  background: white;
-  border: 4px solid black;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.offer-card-image {
-  width: 240px;
-  min-width: 240px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.offer-card-img {
-  width: 100%;
-  height: auto;
-  object-fit: unset;
-  display: block;
-}
-
-.offer-card-content {
-  padding: 1.4rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.35rem;
-  text-align: center;
-}
-
-.offer-card-content * {
-  text-shadow: none !important;
-  color: black !important;
-}
-
-.offer-card-headline {
-  font-size: 0.85rem;
-  line-height: 1.2;
-}
-
-.offer-card-brand {
-  font-size: 1.4rem;
-  line-height: 1.1;
-  border: 3px solid black;
-  padding: 0.4rem;
-}
-
-.offer-card-location {
-  font-size: 0.9rem;
-  line-height: 1.2;
-}
-
-.offer-card-details {
-  text-align: left;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  padding: 0.5rem 0;
-}
-
-.offer-card-detail-item {
-  margin-bottom: 0.25rem;
-}
-
-.offer-card-guarantee {
-  font-size: 0.95rem;
-  background: black;
-  color: white !important;
-  padding: 0.3rem 0.5rem;
-}
-
-.offer-card-fine-print {
-  font-size: 0.75rem;
-}
-
-/* Override the blanket offer-background link styles inside the card */
-tw-passage[tags~="offer-background"] tw-hook[name="offercard"] tw-link {
-  display: inline-block !important;
-  background: black !important;
-  color: white !important;
-  padding: 0.6rem 1.5rem !important;
-  font-size: 1.1rem !important;
-  text-shadow: none !important;
-  border: 3px solid black !important;
-  line-height: 1 !important;
-  cursor: pointer !important;
-  margin-top: 0.3rem;
-}
-
-tw-passage[tags~="offer-background"] tw-hook[name="offercard"] tw-link:hover {
-  background: hotpink !important;
-  color: black !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-tag name="pink-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
 |title&gt;[
 ARE YOU GAY?
@@ -811,9 +803,6 @@ ARE YOU GAY?
 	(goto: &quot;Artist&quot;)
 ]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="offer-background" position="200,575" size="100,100">|offercard&gt;[
 &lt;div class=&quot;offer-card&quot;&gt;
-  &lt;div class=&quot;offer-card-image&quot;&gt;
-    &lt;img class=&quot;offer-card-img&quot; src=&quot;images/Brokeback.png&quot; alt=&quot;Brokeback Mountain Experience poster&quot;&gt;
-  &lt;/div&gt;
   &lt;div class=&quot;offer-card-content&quot;&gt;
     &lt;div class=&quot;offer-card-headline&quot;&gt;WE THINK YOU&#39;D LOVE OUR&lt;/div&gt;
     &lt;div class=&quot;offer-card-brand&quot;&gt;AUTHENTIC BROKEBACK MOUNTAIN EXPERIENCE&lt;/div&gt;
@@ -898,9 +887,6 @@ ARE YOU GAY?
 	(goto: &quot;Otter&quot;)
 ]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|offercard&gt;[
 &lt;div class=&quot;offer-card&quot;&gt;
-  &lt;div class=&quot;offer-card-image&quot;&gt;
-    &lt;img class=&quot;offer-card-img&quot; src=&quot;images/closeted.png&quot; alt=&quot;Dandenong Day Trip for Closeted Men poster&quot;&gt;
-  &lt;/div&gt;
   &lt;div class=&quot;offer-card-content&quot;&gt;
     &lt;div class=&quot;offer-card-headline&quot;&gt;LEAVE THE MISSUS. TELL THE BOYS YOU&#39;RE &quot;JUST GOING FOR A DRIVE&quot;&lt;/div&gt;
     &lt;div class=&quot;offer-card-brand&quot;&gt;DANDENONG DAY TRIP FOR CLOSETED MEN&lt;/div&gt;
