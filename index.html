@@ -685,7 +685,8 @@ ARE YOU GAY?
 </tw-passagedata><tw-passagedata pid="4" name="Setup" tags="startup" position="800,100" size="100,100">(set: $roomCount to 0)
 (set: $maxFade to 16)
 (set: $bgGray to 0)
-(set: $chosenColour to &quot;&quot;)</tw-passagedata><tw-passagedata pid="5" name="Background Control" tags="header" position="925,100" size="100,100">(if: $maxFade &lt;= 0)[
+(set: $chosenColour to &quot;&quot;)
+(set: $tookGayPath to false)</tw-passagedata><tw-passagedata pid="5" name="Background Control" tags="header" position="925,100" size="100,100">(if: $maxFade &lt;= 0)[
 	(set: $maxFade to 8)
 ]
 (if: $roomCount &lt; 0)[
@@ -763,11 +764,13 @@ ARE YOU GAY?
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/gay-camping.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Gay camping&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $tookGayPath to true)
 	(set: $roomCount to it + 1)
 	(goto: &quot;Brokeback&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/gay-wine.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Gay wines&lt;/div&gt;&lt;/div&gt;&quot;)[
+	(set: $tookGayPath to true)
 	(set: $roomCount to it + 1)
 	(goto: &quot;Sleepover&quot;)
 ]]</tw-passagedata><tw-passagedata pid="10" name="Truth" tags="flag-background" position="175,250" size="100,100">|title&gt;[Was that the truth?]
@@ -1030,24 +1033,23 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/angry-otter.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Angry otter&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Calculating&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/cute-otter.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Cute otter&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Calculating&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/giant-river-otter.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Giant river otter&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Calculating&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/polyamorous-otter.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;polyamorous otter&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
-]]
-</tw-passagedata><tw-passagedata pid="23" name="Cookie Consent" tags="flag-background" position="475,300" size="100,100">&lt;div class=&quot;cookie-modal&quot;&gt;
+	(goto: &quot;Calculating&quot;)
+]]</tw-passagedata><tw-passagedata pid="23" name="Cookie Consent" tags="flag-background" position="475,300" size="100,100">&lt;div class=&quot;cookie-modal&quot;&gt;
   &lt;div class=&quot;cookie-text&quot;&gt;
     This website uses cookies to enhance your experience, analyse site traffic, and gently confirm what you already know about yourself. By clicking &quot;Accept All&quot; you consent to our use of cookies and acknowledge that targeted advertising has replaced genuine self-reflection.
   &lt;/div&gt;
@@ -1055,7 +1057,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
     (link: &quot;ACCEPT ALL&quot;)[(goto: &quot;Start&quot;)]
     (link: &quot;ACCEPT ONLY COOKIES THAT CONFIRM I&#39;M STRAIGHT&quot;)[(goto: &quot;Start&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Banana Offer" tags="offer-background" position="75,575" size="100,100">|posterroom&gt;[
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Banana Offer" tags="offer-background" position="100,400" size="100,100">|posterroom&gt;[
 &lt;div class=&quot;text-offer&quot;&gt;
   &lt;div class=&quot;offer-headline&quot;&gt;WAIT!&lt;/div&gt;
   &lt;div class=&quot;offer-body&quot;&gt;Based on your preferences, you qualify for an exclusive offer from&lt;/div&gt;
@@ -1074,7 +1076,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   (set: $roomCount to it + 1)
   (goto: &quot;Artist&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="25" name="Kylie Fan Club" tags="offer-background" position="125,450" size="100,100">|posterroom&gt;[
+]</tw-passagedata><tw-passagedata pid="25" name="Kylie Fan Club" tags="offer-background" position="75,525" size="100,100">|posterroom&gt;[
 &lt;div class=&quot;text-offer&quot;&gt;
   &lt;div class=&quot;offer-headline&quot;&gt;CONGRATULATIONS!&lt;/div&gt;
   &lt;div class=&quot;offer-body&quot;&gt;Your taste in music suggests you may be eligible for&lt;/div&gt;
@@ -1093,6 +1095,29 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   (set: $roomCount to it + 1)
   (goto: &quot;Friday night&quot;)
 ]
+]</tw-passagedata><tw-passagedata pid="26" name="Calculating" tags="flag-background" position="775,575" size="100,100">|title&gt;[CALCULATING YOUR RESULTS...]
+
+|step2)[Analysing 12,492 comparable personal crises...]
+
+|step3)[Detecting patterns of yearning and strategic evasion...]
+
+|step4)[Cross-referencing your otter selection with our proprietary database...]
+
+|step5)[Your result is ready.]
+
+(live: 1.5s)[(show: ?step2)(stop:)]
+(live: 3s)[(show: ?step3)(stop:)]
+(live: 4.5s)[(show: ?step4)(stop:)]
+(live: 6s)[(show: ?step5)(stop:)]
+(live: 7.5s)[
+  (if: $tookGayPath is true)[
+    (goto: &quot;Ending 1&quot;)
+  ](else-if: (count: (history:), &quot;Dream Date&quot;) &gt;= 3)[
+    (goto: &quot;Ending 3&quot;)
+  ](else:)[
+    (goto: &quot;Ending 2&quot;)
+  ]
+  (stop:)
 ]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
