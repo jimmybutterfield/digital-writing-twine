@@ -605,7 +605,7 @@ tw-passage[tags~="offer-background"] .text-offer tw-link:hover {
   background: white !important;
   color: black !important;
   text-shadow: none !important;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-tag name="pink-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="450,275" size="100,100">|hero&gt;[
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-tag name="pink-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="300,400" size="100,100">|hero&gt;[
 |title&gt;[
 ARE YOU GAY?
 (click-replace: &quot;GAY&quot;)[LOST]
@@ -640,7 +640,7 @@ ARE YOU GAY?
 
 |disclaimer&gt;[
 &lt;div class=&quot;fake-disclaimer&quot;&gt;Results may vary depending on honesty, denial, and aesthetic preference.&lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="300,350" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
+]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="425,400" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
 |answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
     (set: $chosenColour to &quot;Red&quot;)
@@ -661,7 +661,7 @@ ARE YOU GAY?
     (set: $chosenColour to &quot;Yellow&quot;)
     (set: $roomCount to it + 1)
     (goto: &quot;Animal&quot;)
-]]</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="450,400" size="100,100">|title&gt;[WHAT ANIMAL ARE YOU?]
+]]</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="550,400" size="100,100">|title&gt;[WHAT ANIMAL ARE YOU?]
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/cat.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Cat&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
@@ -696,7 +696,7 @@ ARE YOU GAY?
 (set: $bgGray to (min: 95, ($roomCount / $maxFade) * 95))
 (enchant: ?Page, (css: &quot;--bgGray:&quot; + (str: $bgGray) + &quot;%;&quot;))
 (enchant: ?Link, (css: &quot;color:black !important; text-shadow:-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;&quot;))
-(enchant: ?Link, (hover-style:(css: &quot;color:white !important; text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;&quot;)))</tw-passagedata><tw-passagedata pid="6" name="Artist" tags="flag-background" position="825,400" size="100,100">|title&gt;[What&#39;s your favourite Kylie Minogue album?]
+(enchant: ?Link, (hover-style:(css: &quot;color:white !important; text-shadow:-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;&quot;)))</tw-passagedata><tw-passagedata pid="6" name="Artist" tags="flag-background" position="925,400" size="100,100">|title&gt;[What&#39;s your favourite Kylie Minogue album?]
 
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/fever.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Fever&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -724,7 +724,7 @@ ARE YOU GAY?
 	(set: $roomCount to it + 1)
 	(goto: &quot;LIAR&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="7" name="Friday night" tags="flag-background" position="950,400" size="100,100">|title&gt;[What&#39;s your ideal friday night?]
+]</tw-passagedata><tw-passagedata pid="7" name="Friday night" tags="flag-background" position="1050,400" size="100,100">|title&gt;[What&#39;s your ideal friday night?]
 
 |answerrow&gt;[
 (link: &quot;Drinks with the boys&quot;)[
@@ -745,12 +745,12 @@ ARE YOU GAY?
 (link: &quot;Bed early with a cup of tea and a book&quot;)[
 (set: $roomCount to it + 1)
 (goto: &quot;Dream Date&quot;)
-]]</tw-passagedata><tw-passagedata pid="8" name="LIAR" tags="flag-background" position="175,125" size="100,100">I KNOW YOU LOVE KYLIE!
+]]</tw-passagedata><tw-passagedata pid="8" name="LIAR" tags="flag-background" position="925,675" size="100,100">I KNOW YOU LOVE KYLIE!
 
 (link: &quot;GO BACK AND ANSWER TRUTHFULLY&quot;)[
 (set: $roomCount to it + 1)
 (goto: &quot;Artist&quot;)
-]</tw-passagedata><tw-passagedata pid="9" name="Dream Date" tags="flag-background" position="350,575" size="100,100">|title&gt;[What&#39;s your dream date?]
+]</tw-passagedata><tw-passagedata pid="9" name="Dream Date" tags="flag-background" position="1175,400" size="100,100">|title&gt;[What&#39;s your dream date?]
 
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/camping.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Camping&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -760,7 +760,7 @@ ARE YOU GAY?
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/wine.webp&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Wines&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Truth&quot;)
+	(goto: &quot;Sleepover&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/gay-camping.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Gay camping&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -773,17 +773,18 @@ ARE YOU GAY?
 	(set: $tookGayPath to true)
 	(set: $roomCount to it + 1)
 	(goto: &quot;Sleepover&quot;)
-]]</tw-passagedata><tw-passagedata pid="10" name="Truth" tags="flag-background" position="175,250" size="100,100">|title&gt;[Was that the truth?]
+]]</tw-passagedata><tw-passagedata pid="10" name="Truth" tags="flag-background" position="1300,550" size="100,100">|title&gt;[Was that the truth?]
 
 |answerrow&gt;[
 (link: &quot;yes&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Sleepover&quot;)
+	(goto: &quot;notice&quot;)
 ]
 (link: &quot;no&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Dream Date&quot;)
-]]</tw-passagedata><tw-passagedata pid="11" name="Fruit" tags="flag-background" position="700,400" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE FRUIT?]
+	(goto: &quot;Sleepover&quot;)
+]]</tw-passagedata><tw-passagedata pid="11" name="Fruit" tags="flag-background" position="800,400" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE FRUIT?]
+(click-replace: &quot;FAVOURITE FRUIT&quot;)[MOST REVEALING FRUIT]
 
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/banana.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Banana&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -804,7 +805,7 @@ ARE YOU GAY?
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/mango.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Mango&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Artist&quot;)
-]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="offer-background" position="200,575" size="100,100">|offercard&gt;[
+]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="offer-background" position="1175,550" size="100,100">|offercard&gt;[
 &lt;div class=&quot;offer-card&quot;&gt;
   &lt;div class=&quot;offer-card-content&quot;&gt;
     &lt;div class=&quot;offer-card-headline&quot;&gt;WE THINK YOU&#39;D LOVE OUR&lt;/div&gt;
@@ -872,23 +873,23 @@ ARE YOU GAY?
     &lt;/div&gt;
 
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Sleepover" tags="flag-background" position="500,575" size="100,100">|title&gt;[WHERE WOULD YOU CHOOSE TO SLEEP WHEN YOUR MALE FRIEND ASKS YOU FOR A SLEEPOVER?]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Sleepover" tags="flag-background" position="1300,400" size="100,100">|title&gt;[WHERE WOULD YOU CHOOSE TO SLEEP WHEN YOUR MALE FRIEND ASKS YOU FOR A SLEEPOVER?]
 
 |answerrow&gt;[
 (link: &quot;In bed with your friend&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Otter&quot;)
+	(goto: &quot;notice&quot;)
 ]
 
 (link: &quot;On the floor beside your friend&#39;s bed&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Otter&quot;)
+	(goto: &quot;notice&quot;)
 ]
 
 (link: &quot;On the couch&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Otter&quot;)
-]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|offercard&gt;[
+	(goto: &quot;truth&quot;)
+]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="1175,675" size="100,100">|offercard&gt;[
 &lt;div class=&quot;offer-card&quot;&gt;
   &lt;div class=&quot;offer-card-content&quot;&gt;
     &lt;div class=&quot;offer-card-headline&quot;&gt;LEAVE THE MISSUS. TELL THE BOYS YOU&#39;RE &quot;JUST GOING FOR A DRIVE&quot;&lt;/div&gt;
@@ -930,7 +931,7 @@ ARE YOU GAY?
 	(set: $roomCount to it + 1)
 	(goto: &quot;Sleepover&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="16" name="Ending 1" tags="flag-background" position="325,900" size="100,100">(set: $roomCount to 0)
+]</tw-passagedata><tw-passagedata pid="16" name="Ending 1" tags="flag-background" position="375,725" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
 (enchant: ?Page, (css: &quot;--bgGray:0%;&quot;))
 |title&gt;[YOUR RESULT]
@@ -947,7 +948,7 @@ It can only tell you that you wanted certainty, and that wanting it made sense.
 
 Maybe what you were looking for was never a result.
 
-Maybe it was permission.</tw-passagedata><tw-passagedata pid="17" name="Ending 3" tags="flag-background" position="600,900" size="100,100">(set: $roomCount to 0)
+Maybe it was permission.</tw-passagedata><tw-passagedata pid="17" name="Ending 3" tags="flag-background" position="625,725" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
 (enchant: ?Page, (css: &quot;--bgGray:0%;&quot;))
 |title&gt;[YOUR RESULT]
@@ -970,7 +971,7 @@ We cannot confirm whether you are gay.
 
 We can confirm that you wanted someone, or something, to tell you that whatever you were feeling was real.
 
-And it was.</tw-passagedata><tw-passagedata pid="18" name="Ending 2" tags="flag-background" position="475,900" size="100,100">(set: $roomCount to 0)
+And it was.</tw-passagedata><tw-passagedata pid="18" name="Ending 2" tags="flag-background" position="500,725" size="100,100">(set: $roomCount to 0)
 (set: $bgGray to 0)
 (enchant: ?Page, (css: &quot;--bgGray:0%;&quot;))
 
@@ -1028,7 +1029,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   ]
 &lt;/div&gt;
 
-&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Otter" tags="flag-background" position="625,575" size="100,100">|title&gt;[Which otter resonates with you the most?]
+&lt;div style=&quot;height: 1200px;&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Otter" tags="flag-background" position="1675,400" size="100,100">|title&gt;[Which otter resonates with you the most?]
 
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/angry-otter.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Angry otter&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -1057,7 +1058,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
     (link: &quot;ACCEPT ALL&quot;)[(goto: &quot;Start&quot;)]
     (link: &quot;ACCEPT ONLY COOKIES THAT CONFIRM I&#39;M STRAIGHT&quot;)[(goto: &quot;Start&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Banana Offer" tags="offer-background" position="100,400" size="100,100">|posterroom&gt;[
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Banana Offer" tags="offer-background" position="800,550" size="100,100">|posterroom&gt;[
 &lt;div class=&quot;text-offer&quot;&gt;
   &lt;div class=&quot;offer-headline&quot;&gt;WAIT!&lt;/div&gt;
   &lt;div class=&quot;offer-body&quot;&gt;Based on your preferences, you qualify for an exclusive offer from&lt;/div&gt;
@@ -1076,7 +1077,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   (set: $roomCount to it + 1)
   (goto: &quot;Artist&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="25" name="Kylie Fan Club" tags="offer-background" position="75,525" size="100,100">|posterroom&gt;[
+]</tw-passagedata><tw-passagedata pid="25" name="Kylie Fan Club" tags="offer-background" position="925,550" size="100,100">|posterroom&gt;[
 &lt;div class=&quot;text-offer&quot;&gt;
   &lt;div class=&quot;offer-headline&quot;&gt;CONGRATULATIONS!&lt;/div&gt;
   &lt;div class=&quot;offer-body&quot;&gt;Your taste in music suggests you may be eligible for&lt;/div&gt;
@@ -1095,7 +1096,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
   (set: $roomCount to it + 1)
   (goto: &quot;Friday night&quot;)
 ]
-]</tw-passagedata><tw-passagedata pid="26" name="Calculating" tags="flag-background" position="775,575" size="100,100">|title&gt;[CALCULATING YOUR RESULTS...]
+]</tw-passagedata><tw-passagedata pid="26" name="Calculating" tags="flag-background" position="500,600" size="100,100">|title&gt;[CALCULATING YOUR RESULTS...]
 
 |step2)[Analysing 12,492 comparable personal crises...]
 
@@ -1118,7 +1119,7 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
     (goto: &quot;Ending 2&quot;)
   ]
   (stop:)
-]</tw-passagedata><tw-passagedata pid="27" name="Friends" tags="flag-background" position="575,400" size="100,100">|title&gt;[WHAT ACTIVITY DO YOU LIKE TO DO WITH YOUR MALE FRIENDS?]
+]</tw-passagedata><tw-passagedata pid="27" name="Friends" tags="flag-background" position="675,400" size="100,100">|title&gt;[WHAT ACTIVITY DO YOU LIKE TO DO WITH YOUR MALE FRIENDS?]
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/afl.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;AFL at the pub&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
@@ -1139,7 +1140,44 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 	(set: $roomCount to it + 1)
 	(goto: &quot;Fruit&quot;)
 ]]
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="28" name="honest" tags="flag-background" position="1550,400" size="100,100">|title&gt;[DID YOU ANSWER HONESTLY?]
+
+|answerrow&gt;[
+(link: &quot;YES&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Otter&quot;)
+]
+
+(link: &quot;NO&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Otter&quot;)
+]
+
+(link: &quot;MAYBE&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;Otter&quot;)
+]]</tw-passagedata><tw-passagedata pid="29" name="notice" tags="flag-background" position="1425,400" size="100,100">|title&gt;[What do you notice when an attractive man walks past?]
+
+|answerrow&gt;[
+(link: &quot;his eyes&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;honest&quot;)
+]
+
+(link: &quot;his outfit&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;honest&quot;)
+]
+
+(link: &quot;his everything and then pretend to be at the phone&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;honest&quot;)
+]
+
+(link: &quot;nothing (I&#39;m straight)&quot;)[
+	(set: $roomCount to it + 1)
+	(goto: &quot;honest&quot;)
+]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
