@@ -505,6 +505,114 @@ tw-passage[tags~="pink-background"] {
   font-size: 0.9rem;
   line-height: 1.4;
   margin-bottom: 1rem;
+}
+
+/* Offer card: poster + info side by side */
+tw-hook[name="offercard"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 720px;
+  width: 90vw;
+  max-height: calc(100vh - 6rem);
+  background: white;
+  border: 4px solid black;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.offer-card-image {
+  width: 240px;
+  min-width: 240px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.offer-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.offer-card-content {
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.offer-card-content * {
+  text-shadow: none !important;
+  color: black !important;
+}
+
+.offer-card-headline {
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.offer-card-brand {
+  font-size: 1.4rem;
+  line-height: 1.1;
+  border: 3px solid black;
+  padding: 0.4rem;
+}
+
+.offer-card-location {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.offer-card-details {
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 0.5rem 0;
+}
+
+.offer-card-detail-item {
+  margin-bottom: 0.25rem;
+}
+
+.offer-card-guarantee {
+  font-size: 0.95rem;
+  background: black;
+  color: white !important;
+  padding: 0.3rem 0.5rem;
+}
+
+.offer-card-fine-print {
+  font-size: 0.75rem;
+}
+
+/* Override the blanket offer-background link styles inside the card */
+tw-passage[tags~="offer-background"] tw-hook[name="offercard"] tw-link {
+  display: inline-block !important;
+  background: black !important;
+  color: white !important;
+  padding: 0.6rem 1.5rem !important;
+  font-size: 1.1rem !important;
+  text-shadow: none !important;
+  border: 3px solid black !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  margin-top: 0.3rem;
+}
+
+tw-passage[tags~="offer-background"] tw-hook[name="offercard"] tw-link:hover {
+  background: hotpink !important;
+  color: black !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-tag name="pink-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
 |title&gt;[
 ARE YOU GAY?
@@ -701,11 +809,29 @@ ARE YOU GAY?
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/mango.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Mango&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Artist&quot;)
-]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="offer-background" position="200,575" size="100,100">|posterroom&gt;[
-(link: &quot;&lt;img class=&#39;offer-poster&#39; src=&#39;images/Brokeback.png&#39; alt=&#39;Authentic Brokeback Mountain Experience poster&#39;&gt;&quot;)[
-	(set: $roomCount to it + 1)
-	(goto: &quot;Claim Offer&quot;)
-]
+]]</tw-passagedata><tw-passagedata pid="12" name="Brokeback" tags="offer-background" position="200,575" size="100,100">|offercard&gt;[
+&lt;div class=&quot;offer-card&quot;&gt;
+  &lt;div class=&quot;offer-card-image&quot;&gt;
+    &lt;img class=&quot;offer-card-img&quot; src=&quot;images/Brokeback.png&quot; alt=&quot;Brokeback Mountain Experience poster&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;offer-card-content&quot;&gt;
+    &lt;div class=&quot;offer-card-headline&quot;&gt;WE THINK YOU&#39;D LOVE OUR&lt;/div&gt;
+    &lt;div class=&quot;offer-card-brand&quot;&gt;AUTHENTIC BROKEBACK MOUNTAIN EXPERIENCE&lt;/div&gt;
+    &lt;div class=&quot;offer-card-location&quot;&gt;★ In the Dandenong Ranges ★&lt;/div&gt;
+    &lt;div class=&quot;offer-card-details&quot;&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;🐴 Horse rides through scenic trails&lt;/div&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;⛺ Camp under starlit skies&lt;/div&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;🔥 Toast marshmallows by the campfire&lt;/div&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;💕 +$500 for a cowboy to accompany you&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;offer-card-guarantee&quot;&gt;100% HETERO-FLEXIBLE GUARANTEE*&lt;/div&gt;
+    &lt;div class=&quot;offer-card-fine-print&quot;&gt;*Terms &amp; Morals Do Not Apply&lt;/div&gt;
+    (link: &quot;CLAIM OFFER&quot;)[
+      (set: $roomCount to it + 1)
+      (goto: &quot;Claim Offer&quot;)
+    ]
+  &lt;/div&gt;
+&lt;/div&gt;
 ]
 
 &lt;audio autoplay&gt;
@@ -770,11 +896,29 @@ ARE YOU GAY?
 (link: &quot;On the couch&quot;)[
 	(set: $roomCount to it + 1)
 	(goto: &quot;Otter&quot;)
-]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|posterroom&gt;[
-(link: &quot;&lt;img class=&#39;offer-poster&#39; src=&#39;images/closeted.png&#39; alt=&#39;Dandenong Day Trip for Closeted Men poster&#39;&gt;&quot;)[
-	(set: $roomCount to it + 1)
-	(goto: &quot;Claim Offer&quot;)
-]
+]]</tw-passagedata><tw-passagedata pid="15" name="Closeted trip" tags="offer-background" position="175,700" size="100,100">|offercard&gt;[
+&lt;div class=&quot;offer-card&quot;&gt;
+  &lt;div class=&quot;offer-card-image&quot;&gt;
+    &lt;img class=&quot;offer-card-img&quot; src=&quot;images/closeted.png&quot; alt=&quot;Dandenong Day Trip for Closeted Men poster&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;offer-card-content&quot;&gt;
+    &lt;div class=&quot;offer-card-headline&quot;&gt;LEAVE THE MISSUS. TELL THE BOYS YOU&#39;RE &quot;JUST GOING FOR A DRIVE&quot;&lt;/div&gt;
+    &lt;div class=&quot;offer-card-brand&quot;&gt;DANDENONG DAY TRIP FOR CLOSETED MEN&lt;/div&gt;
+    &lt;div class=&quot;offer-card-location&quot;&gt;Discreet Mountain Retreat for Men Who Are Just Asking Questions&lt;/div&gt;
+    &lt;div class=&quot;offer-card-details&quot;&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;📸 Scenic lookouts (no filters needed)&lt;/div&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;😎 Plausible deniability (it&#39;s just a hike, mate)&lt;/div&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;🛌 One double sleeping bag (for warmth)&lt;/div&gt;
+      &lt;div class=&quot;offer-card-detail-item&quot;&gt;🤐 No questions asked (seriously)&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;offer-card-guarantee&quot;&gt;LIMITED SEATS — BOOK NOW&lt;/div&gt;
+    &lt;div class=&quot;offer-card-fine-print&quot;&gt;Before your courage expires&lt;/div&gt;
+    (link: &quot;BOOK YOUR ESCAPE&quot;)[
+      (set: $roomCount to it + 1)
+      (goto: &quot;Claim Offer&quot;)
+    ]
+  &lt;/div&gt;
+&lt;/div&gt;
 ]
 
 &lt;audio autoplay&gt;
