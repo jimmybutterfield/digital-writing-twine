@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Sexuality Quiz.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Sexuality Quiz" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="5FE31912-FA0C-4D36-A6D1-8B57FC1E9C47" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One:ital@0;1&display=swap');
+<tw-storydata name="Sexuality Quiz" startnode="23" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="5FE31912-FA0C-4D36-A6D1-8B57FC1E9C47" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One:ital@0;1&display=swap');
 
 html,
 body {
@@ -420,7 +420,92 @@ tw-passage[tags~="pink-background"] {
   background: hotpink !important;
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-tag name="pink-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
+/* Cookie consent banner */
+.cookie-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 4px solid black;
+  padding: 1.2rem 2rem;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.cookie-text {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 200px;
+  text-shadow: none;
+  color: black;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cookie-buttons tw-link {
+  background: black !important;
+  color: white !important;
+  padding: 0.5rem 0.8rem !important;
+  font-size: 0.85rem !important;
+  text-shadow: none !important;
+  border: 2px solid black !important;
+  cursor: pointer !important;
+}
+
+.cookie-buttons tw-link:hover {
+  background: white !important;
+  color: black !important;
+  text-shadow: none !important;
+}
+
+/* Text-based offer rooms (Banana, Kylie) */
+.text-offer {
+  background: white;
+  border: 4px solid black;
+  padding: 2rem;
+  max-width: 500px;
+  width: 85vw;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.offer-headline {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.offer-body {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.offer-brand {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  border: 3px solid black;
+  padding: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.offer-subtext {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="flag-background" color="purple"></tw-tag><tw-tag name="header" color="blue"></tw-tag><tw-tag name="startup" color="yellow"></tw-tag><tw-tag name="offer-background" color="blue"></tw-tag><tw-tag name="claim-background" color="green"></tw-tag><tw-tag name="top-page" color="green"></tw-tag><tw-tag name="pink-background" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="flag-background" position="600,300" size="100,100">|hero&gt;[
 |title&gt;[
 ARE YOU GAY?
 (click-replace: &quot;GAY&quot;)[LOST]
@@ -458,22 +543,25 @@ ARE YOU GAY?
 ]</tw-passagedata><tw-passagedata pid="2" name="Colour" tags="flag-background" position="350,425" size="100,100">|title&gt;[WHAT&#39;S YOUR FAVOURITE COLOUR?]
 |answerrow&gt;[
 (link: &quot;&lt;span style=&#39;color:red;&#39;&gt;RED&lt;/span&gt;&quot;)[
-	(set: $roomCount to it + 1)
-	(goto: &quot;Animal&quot;)
+    (set: $chosenColour to &quot;Red&quot;)
+    (set: $roomCount to it + 1)
+    (goto: &quot;Animal&quot;)
 ]
 (link: &quot;&lt;span style=&#39;color:green;&#39;&gt;GREEN&lt;/span&gt;&quot;)[
-	(set: $roomCount to it + 1)
-	(goto: &quot;Animal&quot;)
+    (set: $chosenColour to &quot;Green&quot;)
+    (set: $roomCount to it + 1)
+    (goto: &quot;Animal&quot;)
 ]
 (link: &quot;&lt;span style=&#39;color:blue;&#39;&gt;BLUE&lt;/span&gt;&quot;)[
-	(set: $roomCount to it + 1)
-	(goto: &quot;Animal&quot;)
+    (set: $chosenColour to &quot;Blue&quot;)
+    (set: $roomCount to it + 1)
+    (goto: &quot;Animal&quot;)
 ]
 (link: &quot;&lt;span style=&#39;color:#d4a000;&#39;&gt;YELLOW&lt;/span&gt;&quot;)[
-	(set: $roomCount to it + 1)
-	(goto: &quot;Animal&quot;)
-]
-]</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="475,425" size="100,100">|title&gt;[WHAT ANIMAL ARE YOU?]
+    (set: $chosenColour to &quot;Yellow&quot;)
+    (set: $roomCount to it + 1)
+    (goto: &quot;Animal&quot;)
+]]</tw-passagedata><tw-passagedata pid="3" name="Animal" tags="flag-background" position="475,425" size="100,100">|title&gt;[WHAT ANIMAL ARE YOU?]
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/cat.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Cat&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
@@ -496,7 +584,8 @@ ARE YOU GAY?
 ]]
 </tw-passagedata><tw-passagedata pid="4" name="Setup" tags="startup" position="800,100" size="100,100">(set: $roomCount to 0)
 (set: $maxFade to 16)
-(set: $bgGray to 0)</tw-passagedata><tw-passagedata pid="5" name="Background Control" tags="header" position="925,100" size="100,100">(if: $maxFade &lt;= 0)[
+(set: $bgGray to 0)
+(set: $chosenColour to &quot;&quot;)</tw-passagedata><tw-passagedata pid="5" name="Background Control" tags="header" position="925,100" size="100,100">(if: $maxFade &lt;= 0)[
 	(set: $maxFade to 8)
 ]
 (if: $roomCount &lt; 0)[
@@ -511,22 +600,22 @@ ARE YOU GAY?
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/fever.avif&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Fever&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Kylie Fan Club&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/tension.webp&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Tension&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Kylie Fan Club&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/tension-ii.webp&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Tension II&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Kylie Fan Club&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/christmas.jpg&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Kylie Christmas&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Friday night&quot;)
+	(goto: &quot;Kylie Fan Club&quot;)
 ]]
 
 |skipbutton&gt;[
@@ -596,7 +685,7 @@ ARE YOU GAY?
 |answerrow&gt;[
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/banana.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Banana&lt;/div&gt;&lt;/div&gt;&quot;)[
 	(set: $roomCount to it + 1)
-	(goto: &quot;Artist&quot;)
+	(goto: &quot;Banana Offer&quot;)
 ]
 
 (link: &quot;&lt;div class=&#39;album-choice&#39;&gt;&lt;img class=&#39;album-cover&#39; src=&#39;images/strawberry.png&#39;&gt;&lt;div class=&#39;album-label&#39;&gt;Strawberry&lt;/div&gt;&lt;/div&gt;&quot;)[
@@ -764,6 +853,13 @@ There is no percentage.
 There is no clean answer.
 There is no final score.
 
+(if: $chosenColour is not &quot;&quot;)[
+You said your favourite colour was (print: $chosenColour).
+
+It told us nothing.
+
+]
+
 Only a person trying, for a little while, to make uncertainty feel measurable.
 
 Thank you for participating in this totally legitimate diagnostic experience.</tw-passagedata><tw-passagedata pid="19" name="Site Header" tags="header" position="425,125" size="100,100">|topnav&gt;[
@@ -821,7 +917,45 @@ Thank you for participating in this totally legitimate diagnostic experience.</t
 	(set: $roomCount to it + 1)
 	(goto: &quot;Friday night&quot;)
 ]]
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="23" name="Cookie Consent" tags="flag-background" position="475,300" size="100,100">&lt;div class=&quot;cookie-modal&quot;&gt;
+  &lt;div class=&quot;cookie-text&quot;&gt;
+    This website uses cookies to enhance your experience, analyse site traffic, and gently confirm what you already know about yourself. By clicking &quot;Accept All&quot; you consent to our use of cookies and acknowledge that targeted advertising has replaced genuine self-reflection.
+  &lt;/div&gt;
+  &lt;div class=&quot;cookie-buttons&quot;&gt;
+    (link: &quot;ACCEPT ALL&quot;)[(goto: &quot;Start&quot;)]
+    (link: &quot;ACCEPT ONLY COOKIES THAT CONFIRM I&#39;M STRAIGHT&quot;)[(goto: &quot;Start&quot;)]
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Banana Offer" tags="offer-background" position="75,575" size="100,100">|posterroom&gt;[
+&lt;div class=&quot;text-offer&quot;&gt;
+  &lt;div class=&quot;offer-headline&quot;&gt;WAIT!&lt;/div&gt;
+  &lt;div class=&quot;offer-body&quot;&gt;Based on your preferences, you qualify for an exclusive offer from&lt;/div&gt;
+  &lt;div class=&quot;offer-brand&quot;&gt;BANANA OF THE MONTH CLUB&lt;/div&gt;
+  &lt;div class=&quot;offer-subtext&quot;&gt;Premium bananas. Delivered discreetly. Every month.&lt;br&gt;Join 45,000 other men who love bananas.&lt;/div&gt;
+  (link: &quot;CLAIM OFFER&quot;)[(goto: &quot;Claim Offer&quot;)]
+&lt;/div&gt;
+]
+
+|skipbutton&gt;[
+(link: &quot;&lt;div class=&#39;skip-choice&#39;&gt;&lt;img class=&#39;skip-icon&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;skip-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
+  (set: $roomCount to it + 1)
+  (goto: &quot;Artist&quot;)
+]
+]</tw-passagedata><tw-passagedata pid="25" name="Kylie Fan Club" tags="offer-background" position="125,450" size="100,100">|posterroom&gt;[
+&lt;div class=&quot;text-offer&quot;&gt;
+  &lt;div class=&quot;offer-headline&quot;&gt;CONGRATULATIONS!&lt;/div&gt;
+  &lt;div class=&quot;offer-body&quot;&gt;Your taste in music suggests you may be eligible for&lt;/div&gt;
+  &lt;div class=&quot;offer-brand&quot;&gt;OFFICIAL KYLIE MINOGUE FAN CLUB MEMBERSHIP&lt;/div&gt;
+  &lt;div class=&quot;offer-subtext&quot;&gt;Exclusive access. Monthly newsletter. 10% off horse riding.&lt;br&gt;Results pending verification of your sexuality.&lt;/div&gt;
+  (link: &quot;JOIN NOW&quot;)[(goto: &quot;Claim Offer&quot;)]
+&lt;/div&gt;
+]
+
+|skipbutton&gt;[
+(link: &quot;&lt;div class=&#39;skip-choice&#39;&gt;&lt;img class=&#39;skip-icon&#39; src=&#39;images/closet.png&#39;&gt;&lt;div class=&#39;skip-label&#39;&gt;SKIP&lt;/div&gt;&lt;/div&gt;&quot;)[
+  (set: $roomCount to it + 1)
+  (goto: &quot;Friday night&quot;)
+]
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
