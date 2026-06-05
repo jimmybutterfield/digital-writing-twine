@@ -517,7 +517,7 @@ tw-hook[name="offercard"] {
 .offer-card {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: flex-start;
   max-width: 720px;
   width: 90vw;
   max-height: calc(100vh - 6rem);
@@ -536,8 +536,8 @@ tw-hook[name="offercard"] {
 
 .offer-card-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: unset;
   display: block;
 }
 
